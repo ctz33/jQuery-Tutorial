@@ -1,0 +1,44 @@
+[
+  {
+    "method": ".prev([selector])",
+    "description": "Gets the immediately preceding sibling of the selected element, optionally filtered by a selector.",
+    "example": "$(\"ul\").prev()",
+    "returns": "The immediately preceding siblings of the &lt;ul&gt; elements"
+  },
+  {
+    "method": ".prevAll([selector])",
+    "description": "Gets all preceding sibling of the selected element, optionally filtered by a selector.",
+    "example": "$(\"ul\").prevAll()",
+    "returns": "All preceding siblings of the &lt;ul&gt; elements"
+  },
+  {
+    "method": ".prevUntil([selector][,filter])",
+    "description": "Gets all preceding siblings of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.",
+    "example": "$(\"ul\").prevUntil(\"h2\")",
+    "returns": "All preceding siblings between &lt;ul&gt; and &lt;h2&gt; elements (exclusive)."
+  },
+  {
+    "method": ".next([selector])",
+    "description": "Gets the immediately following sibling of the selected element, optionally filtered by a selector. If the selector is provided, it will get the immediately following sibling only if it matches the selector.",
+    "example": "$(\"h2\").next(\"p\")",
+    "returns": "The immediately following sibling of the &lt;h2&gt; elements if it is a &lt;p&gt; element"
+  },
+  {
+    "method": ".nextAll([selector])",
+    "description": "Gets all following sibling of the selected element, optionally filtered by a selector.",
+    "example": "$(\"h2\").nextAll(\"p\")",
+    "returns": "All following siblings of the &lt;h2&gt; elements that are &lt;p&gt; elements"
+  },
+  {
+    "method": ".nextUntil([selector][,filter])",
+    "description": "Gets all following siblings of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.",
+    "example": "$(\"h2\").nextUntil(\"p\")",
+    "returns": "All following siblings between &lt;h2&gt; and &lt;p&gt; elements (exclusive)."
+  },
+  {
+    "method": ".siblings([selector])",
+    "description": "Gets all the siblings of the selected element, optionally filtered by a selector.",
+    "example": "$(\"h3\").siblings()",
+    "returns": "All siblings of the &lt;h3&gt; elements"
+  }
+]

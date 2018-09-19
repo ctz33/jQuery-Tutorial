@@ -1,0 +1,14 @@
+[
+  {
+    "selector": "$(\":hidden\")",
+    "description": "Selects all elements that are hidden.",
+    "example": "$(\"button:hidden\")",
+    "selects": "All hidden &lt;button&gt; elements and button type &lt;input&gt; elements"
+  },
+  {
+    "selector": "$(\":visible\")",
+    "description": "Selects all elements that are visible.",
+    "example": "$(\"button:visible\")",
+    "selects": "All visible &lt;button&gt; elements and button type &lt;input&gt; elements"
+  }
+]

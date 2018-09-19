@@ -1,0 +1,197 @@
+// Author: Ariel
+// Edit: Channing, help with color selection and font choice
+// Edit: 7/12 Mike, Add table styling and .index overflow
+// Description: Standard css styling for website pages
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Roboto");
+
+html,
+body {
+  min-width: 850px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+}
+// Set the color of the hyper link.
+a{
+  text-decoration: none;
+  color:#3069aa;
+}
+// Set the color change when the mouse is hovering the navigation bar.
+a:hover{
+  color:#a8ccf4;
+}
+
+// Changed the color of a visited hyper link.
+a:visited{
+  color:#1e3d60;
+}
+
+// Set the color of the headings.
+h1,h2,h3,h4,h5{
+  color:#3069aa;
+}
+
+.content-container {
+    left:28%;
+    width:67%;
+    z-index: 5;
+    position:relative;
+    display: block;
+}
+.index{
+  height:89%;
+  line-height: 1.6em;
+  display: block;
+  background-color: #3069aa;
+  overflow: scroll;
+  p:hover,p.active{
+    background-color:#1e3d60;
+    font-weight: bold;
+    // cursor: pointer;
+  }
+  p{
+    margin: 0px;
+    text-align: center;
+    color: #a8ccf4;
+    font-size: 14px;
+  }
+  .section{
+    font-size: 16px;
+    color:white;
+    weight:bold;
+  }
+}
+.navigation{
+    top:0;
+    bottom: 0;
+    left:0;
+    width: 25%;
+    z-index: 5;
+    // border-right-style:  0px 1px 1px #84110a;
+    display: block;
+    position: fixed;
+    height: 100%;
+    // background-color: rgb(200, 16, 46);
+}
+#jQuery-logo{
+  height: 11%;
+  width: 80%;
+  background: white;
+  max-height: 100%;
+  align-content: center;
+  display: block;
+  margin: auto;
+  padding: 3px 0;
+}
+footer {
+  height: 5em;
+  width: 100%;
+  float:right;
+  background-color: #3069aa;
+  position: relative;
+  top: 3em; }
+
+footer p {
+  color: white;
+  line-height: 5em;
+  text-align: center;
+  margin: 0;
+  }
+
+footer a {
+  color: #a8ccf4;
+  padding-left: 1em;
+}
+footer a:hover{
+  color:#1e3d60;
+}
+
+// Set the font family for the texts in table
+table {
+  font-family: 'Roboto Condensed', sans-serif;
+  border-collapse: collapse;
+}
+
+th, td{
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* e.g. replace this selector */
+.codehilite .hll { background-color: #ffffcc }
+/* with this one */
+.highlight .hll { background-color: #ffffcc }
+
+img[src="./images/DOMTree.png"]{
+  height:250px;
+}
+
+a.next, a.previous{
+  font-size: 22px;
+  font-weight: bold;
+  color: #3069aa;
+  margin: 30px 0px 0px;
+}
+a.next{
+  float:right;
+}
+a.previous{
+  float:left;
+}
+// a.previous{
+//   float:left;
+//   display: block;
+// }
+
+// a.next,a.previous {
+//   display: inline-block;
+//   border-radius: 4px;
+//   background-color: #3069aa;
+//   border: none;
+//   color: white;
+//   text-align: center;
+//   font-size: 20px;
+//   padding: 10px;
+//   width: 130px;
+//   transition: all 0.5s;
+//   cursor: pointer;
+//   margin: 30px 0px 0px;
+// }
+
+a.next span,a.previous span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+a.next span:after{
+  content: '\00bb';
+  position: relative;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+a.previous span:before {
+  content: '\00ab';
+  position: relative;
+  opacity: 0;
+  top: 0;
+  left: -5px;
+  transition: 0.5s;
+}
+
+a.next:hover span {
+  padding-right: 25px;
+}
+a.previous:hover span {
+  padding-left: 25px;
+}
+a.next:hover span:after,a.previous:hover span:before  {
+  opacity: 1;
+  right: 0;
+}

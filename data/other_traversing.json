@@ -1,0 +1,27 @@
+[
+  {
+    "method": ".add(selector [,context])",
+    "syntax": "$(selector).add(selector[, context])",
+    "description": "Adds elements that match the selector to currently selected elements. Context is optional to specify where to start matching the element and the selector.",
+    "example": "$(\"p\").add(\"button\")",
+    "returns": "The &lt;p&gt; elements and &lt;button&gt; elements"
+  },
+  {
+    "method": ".addBack([selector])",
+    "description": "Adds the previous selection to the current selection, optionally filtered by a selector.",
+    "example": "$(\"p\").next().addBack()",
+    "returns": "The originally selected &lt;p&gt; element and its immediately following sibling."
+  },
+  {
+    "method": ".contents()",
+    "description": "Gets the children of selected element, including text and comment nodes.",
+    "example": "$(\"p\"#found).contents()",
+    "returns": "Contents of the &lt;p&gt; element with id \"found\""
+  },
+  {
+    "method": "operations.end()",
+    "description": "Ends the most recent filtering operation and returns the set of selected elements to its previous state.",
+    "example": "$(\"div\").find(\"p\").end()",
+    "returns": "All &lt;div&gt; elements"
+  }
+]

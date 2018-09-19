@@ -1,0 +1,57 @@
+---
+title: Table
+---
+<div class="row">
+
+    <div id="datatables">
+      <div>
+        <h2>OSU Dorms</h2>
+        <table id="dorm-classic">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Campus</th>
+              <th>Area</th>
+              <th>Hall Director</th>
+              <th>Learning Community</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.dorm.each do |dorm| %>
+              <tr>
+                <td><%= dorm["name"] %></td>
+                <td><%= dorm["campus"] %></td>
+                <td><%= dorm["area"] %></td>
+                <td><%= dorm["hall_director"] %></td>
+                <td><%= dorm["learning_community"] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+    <div>
+      <h2>OSU Dorms</h2>
+      <table id="dorm-datatable" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Campus</th>
+            <th>Area</th>
+            <th>Hall Director</th>
+            <th>Learning Community</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.dorm.each do |dorm| %>
+            <tr>
+              <td><%= dorm["name"] %></td>
+              <td><%= dorm["campus"] %></td>
+              <td><%= dorm["area"] %></td>
+              <td><%= dorm["hall_director"] %></td>
+              <td><%= dorm["learning_community"] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

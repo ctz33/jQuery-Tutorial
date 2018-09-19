@@ -1,0 +1,104 @@
+[
+  {
+    "selector": "$(\"element\")",
+    "description": "Selects all elements with the specific tag name.",
+    "example": "$(\"p\")",
+    "selects": "All &lt;p&gt; elements in the document"
+  },
+  {
+    "selector": "$(\"#id\")",
+    "description": "Selects a single element with the specific id.",
+    "example": "$(\"#test-id\")",
+    "selects": "The single element that has an id \"test-id\""
+  },
+  {
+    "selector": "$(\".class\")",
+    "description": "Selects all elements with the specific class.",
+    "example": "$(\".test-class\")",
+    "selects": "All elements that have a class \"test-class\""
+  },
+  {
+    "selector": "$(\"*\")",
+    "description": "Selects all elements.",
+    "example": "$(\"*\")",
+    "selects": "All elements"
+  },
+  {
+    "selector": "$(\"selector 1, selector 2, selector N\")",
+    "description": "Selects elements that match any one of the selectors.",
+    "example": "$(\".test-class, #test-id\")",
+    "selects": "Elements that have a class \"test-class\" or have an id \"test-id\""
+  },
+  {
+    "selector": "$(\":even\")",
+    "description": "Selects elements with even indices (index starts with 0).",
+    "example": "$(\"li:even\")",
+    "selects": "Even &lt;li&gt; elements"
+  },
+  {
+    "selector": "$(\":odd\")",
+    "description": "Selects elements with odd indices (index starts with 0).",
+    "example": "$(\"li:odd\")",
+    "selects": "Odd &lt;li&gt; elements"
+  },
+  {
+    "selector": "$(\":root\")",
+    "description": "Selects the root element of the document. The root element of HTML is always the &lt;html&gt; element.",
+    "example": "$(\":root\")",
+    "selects": "The root element of the document."
+  },
+  {
+    "selector": "$(\":first\")",
+    "description": "Selects the first element.",
+    "example": "$(\"li:first\")",
+    "selects": "The first &lt;li&gt; element"
+  },
+  {
+    "selector": "$(\":last\")",
+    "description": "Selects the last element",
+    "example": "$(\"li:last\") ",
+    "selects": "The last &lt;li&gt; element"
+  },
+  {
+    "selector": "$(\":eq(index)\")",
+    "description": "Selects the element with the specific index (index starts with 0).",
+    "example": "$(\"p:eq(0)\")",
+    "selects": "The first &lt;p&gt; element"
+  },
+  {
+    "selector": "$(\":gt(index)\")",
+    "description": "Selects all elements at indices that are greater than the specific index (index starts with 0).",
+    "example": "$(\"p:gt(4)\")",
+    "selects": "All &lt;p&gt; elements that have indices greater than 4"
+  },
+  {
+    "selector": "$(\":lt(index)\")",
+    "description": "Selects all elements at indices that are less than the specific index (index starts with 0).",
+    "example": "$(\"p:lt(4)\")",
+    "selects": "All &lt;p&gt; elements that have indices less than 4"
+  },
+  {
+    "selector": "$(\":not(selector)\")",
+    "description": "Selects all elements that do not match the specific selector.",
+    "example": "$(\"p:not(.test-class)\")",
+    "selects": "All &lt;p&gt; elements that do not have a class \"test-class\""
+  },
+  {
+    "selector": "$(\":header\")",
+    "description": "Selects all header elements, i.e. &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, etc.",
+    "example": "$(\":header\")",
+    "selects": "All header elements"
+  },
+  {
+    "selector": "$(\":animated\")",
+    "description": "Selects all elements that are currently animated.",
+    "example": "$(\".changed:animated\")",
+    "selects": "All elements with class \"changed\" that are currently animated"
+  },
+  {
+    "selector": "$(\":lang(language)\")",
+    "description": "Selects all elements with the language attribute starting with the specific value.",
+    "example": "$(\"p:lang(en)\")",
+    "selects": "All &lt;p&gt; elements that have a language attribute whose value starts with \"en\""
+  }
+]

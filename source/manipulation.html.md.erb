@@ -1,0 +1,278 @@
+---
+title: jQuery Manipulation
+---
+<!-- Created by Channing Jacobs -->
+
+# jQuery Manipulation
+jQuery provides methods to access, update, add, and remove DOM elements and attributes on a web page. Recall, a set of one or more objects may be selected by direct selection: “$(selector)” or through traversal: “$(selector).jQuery\_traversal\_method()”.
+
+jQuery manipulation methods can be split into two categories. The first is HTML manipulation. These methods interact with elements and their content. The second is CSS manipulation. These methods interact with the style attribute of elements.
+
+<span id="HTML_M"></span>
+## HTML Manipulation
+
+Once you have selected a set of one or more objects, you may interact with their content. The content may be plain text, html data, or element attributes. The most common operations are accessing and updating content.
+
+### Accessing and Updating:
+
+There are four methods to access and update web page content. The .text() method is used to get or replace text. The .html() method gets or replaces html. The .val() method gets or replaces form text data. Finally, the .attr() method gets or replaces elements’ attributes. Each method and its use cases is listed below.
+
+#### Text
+```javascript
+    .text()
+    .text(new_text)
+    .text(function(index, old_text))
+```
+- The .text() method returns the combined text contents of each selected element and their descendants in a string.
+- When .text() is provided with new\_text, the text of each selected element is updated to new\_text. new\_text may be a string, boolean, or number (booleans and numbers are converted to a string representation by default).
+- If the user supplies a function, it will receive the index of the element from the selected set of elements and the old\_text value. The function must return a string.
+
+**Notes:** The .text() method may be used on XML and HTML documents. Whitespace may vary due to HTML parser used by each browser. The value of form elements can’t be set or accessed with .text(); use .val() for these elements. This method escapes the provided string (by calling .createTextNode()) to avoid rendering errors. For example, &lt;div&gt; is transformed into \&lt;div\&gt;”.
+
+**Example:**
+  <p data-height="265" data-theme-id="0" data-slug-hash="BPNbzM" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="BPNbzM" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/BPNbzM/">BPNbzM</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### HTML
+```javascript
+    .html()
+    .html(new_html)
+    .html(function(index, old_html))
+```
+- The .html() method returns the html contents of the first element in the set of selected elements.
+- Each selected element will replace its html content with the provided valid html string new_html.
+- A user defined function may be passed if it returns a valid html string. See .text() for more detail.
+
+**Notes:** The .html() method can’t be called on XML documents. The browser’s innerHTML property is used to retrieve html content. This means that formatting of the HTML may differ from the original document.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="pZJBad" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".html()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/pZJBad/">.html()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Values
+```javascript
+    .val()
+    .val(new_value)
+    .val(function(index,value))
+```
+- The .val() method returns the value of form elements. Examples of form elements include: input, select, textarea, and checkboxes.
+- The user may provide a new_value to replace in form elements. The new_value may be a string, number, or array of strings (one string is used for each selected element).
+- A user function may be passed if it returns a valid value string. See .text() for more detail.
+
+**Notes:** A select element with multiple attribute will return an array of values for each selected option when .val() is called. The .val() method will return undefined if called on an empty collection.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="oMXVNe" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="oMXVNe" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/oMXVNe/">oMXVNe</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Attributes
+```javascript
+    .attr(attr_name)
+    .attr(attr_name, new_value)
+    .attr(attr_name, function(index, old_value))
+```
+
+- The .attr() method returns the attribute matching the attr_name for the first element in the set of selected elements. It will return undefined for attributes that have not been set.
+- The user may provide a new_value to replace the value of the attribute attr_name. The new_value may be a string, number, or null (to remove the attribute).
+- A user function may be passed if it returns a valid value string. See .text() for more detail.
+
+**Notes:** To loop through attributes of multiple selected elements, use javascript .forEach or .map (or jQuery .each and .map). If new_string is empty, the attribute is removed.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="VBvVgd" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".attr()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/VBvVgd/">.attr()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+### Adding:
+The previous methods were used to retrieve and update existing content. The following methods are used to add new content to a web page.
+
+#### Inserting
+```javascript
+    .append(new_content)
+    .prepend(new_content)
+    .after(new_content)
+    .before(new_content)
+```
+
+The four methods above allow for content to be added to four locations on a web page.
+
+- The .append() method inserts new_content at the start of the selected element(s).
+- The .prepend() method inserts new_content at the end of of the selected element(s).
+- The .after() method inserts new_content after the seleted element(s).
+- The .before() method inserts new_content before the selected element(s).
+
+The new_content variable must be an html string, element, text, array of elements, or jQuery object.
+
+Each of these methods also has a variant.
+
+
+```javascript
+    (new_content).appendTo(target)
+    (new_content).prependTo(target)
+    (new_content).after(target)
+    (new_content).before(target)
+```
+
+ These methods run identically to the above methods. The difference is that the new_content is the distinguished parameter, while the selected set of elements (target) is now the argument.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="jpbQjb" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="Adding" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/jpbQjb/">Adding</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Wrapping
+
+Another way to add content is by wrapping it around an existing html structure. This is done by calling .wrap().
+
+```javascript
+    .wrap(wrapper)
+```
+
+- The .wrap() method encloses the selected elements with the provided wrapper.
+
+This method is commonly used for bundling sections of a web page within div tags. Then, all elements may be manipulated by styling their div container. This process may also be viewed as parent replacement (the old parent becomes an ancestor). An example is provided in the unwrap section.
+
+### Removing
+Removing content from a web page is simple in jQuery. There are three common content removal patterns: deleting, toggling, and unwrapping.
+
+#### Deleting
+Direct deletion occurs on elements or attributes.
+
+##### Elements
+Two of the following methods have an optional filter variable. The filter is a selector that limits the scope of deletion. The filter variable eliminates a verbose initial selector; especially when class names are involved.
+
+```javascript
+    .remove(filter)
+    .detach(filter)
+    .empty()
+```
+
+- The .remove() and .detach() methods remove the selected elements and their descendants (including text) from the DOM.
+- The .empty() method removes all descendants (including text) from the selected elements.
+
+Unlike .remove(), .detach() does not delete bound events and jQuery data associated with the removed elements. The .detach() method returns the object(s) that were deleted. The user should use .detach() when an element will be added back to the page at a later time. The .remove() method should be used for permanent removal.
+
+The .empty() method can be used to clear out content from a container such as a paragraph or div. Then, new content can be injected using an add method from the previous subsection.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="KBVppZ" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="Deleting Elements" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/KBVppZ/">Deleting Elements</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+##### Attributes
+```javascript
+    .removeAttr(attr_names)
+```
+
+- The .removeAttr() method removes the  attributes of an element using attr_names.
+
+The attr_names variable is a string of space-separated attribute names.
+
+This method uses the JavaScript .removeAttribute() method, but has two improvements. It can be called on jQuery objets and it handles attribute name differences across browsers.
+
+#### Toggling
+```javascript
+    .toggle()
+    .toggle(options)
+```
+
+- The .toggle() method changes the visibility of the selected elements.
+
+Toggle is commonly used with <a href="./Event-and-Animation.html">event handlers</a> such as .click(). Without any parameters it simply changes the display property of selceted content. This method may also take options such as duration in seconds and callback functions for success or failure. The complete API is [here](https://api.jquery.com/toggle/).
+
+#### Unwrapping
+```javascript
+    .unwrap()
+    .unwrap(filter)
+```
+
+- The .unwrap() method removes the parent element of the selected element from the DOM. The parent element is returned.
+
+The .unwrap() and .wrap() methods may be paired to change the styling of a data container.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="JBYwXv" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".wrap()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/JBYwXv/">.wrap()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<span id="CSS_M"></span>
+## CSS Manipulation
+jQuery allows the user to change the styling of content by interacting directly with its class attribute, style attribute, and dimensions.
+
+### Classes
+Before interacting with any element's class, the user should check that the element is a member of that class. This check may seem trivial, but it is important since other jQuery code may change class membership.
+
+```javascript
+    .hasClass(class_name)
+```
+
+- The .hasClasS() method returns a boolean if the selected elements have the class class_name.
+
+The class_name variable should be a single class name as a string.
+
+Once the user calls .hasClass(), then the following methods may be called to get/update, add, or remove a class.
+
+```javascript
+    .addClass(class_names)
+    .removeClass()
+    .removeClass(class_names)
+    .toggleClass(class_names)
+```
+
+The class_names variable is a string of space-separated classes.
+
+- The .addClass() method adds one or more classes to the selected elements.
+- The .removeClass() method removes all classes from the selected elements. If class_names is provided, then only matched classes will be removed.
+- The .toggleClass(class_names) method enables or disables all classes specified by class_names.
+
+**Note:** The .addClass() method does not replace existing classes. Instead, it appends a class to the elements selected. Therefore, the user must be careful of duplicating classes.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="pZjxeZ" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".class()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/pZjxeZ/">.class()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+### Style Attribute
+
+```javascript
+    .css(property_name)
+    .css(property_names)
+    .css(property_name, value)
+    .css(property_object)
+    .css(property_name, function(index, old_value))
+```
+
+- The .css() method will return the value of a css property if provided a valid property_name.
+- If provided an array of property_names, each property will be returned in an object. Use the jQuery.each() method to access the data. See the example for iteration through the object.
+- The user may provide property_name and value strings to set each selected elements' property to that value.
+- The .css() method can take a property object. This allows for multiple properties to be set at once. The property_object has the same syntax as a JavaScript object, but contains property:value key pairs.
+- The .css() method can be provided a function to update the property_name. The function must return a string or number based on the css property requirement. The function may be used when setting up a property_object (see example).
+
+**Notes:** The .css() method only returns the properties of the first element selected, but can set the properties of all selected elements. The .ccs() method interacts with inline css only.
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="qybdjW" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".css()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/qybdjW/">.css()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+### Dimensions
+jQuery provides methods to interact with the css box model. The traditional box model is shown below with mappings to each jQuery method.
+
+<br>
+<img src="./images/img_jquerydim.gif" alt="jQuery Dimensions Picture" "Simplified Dimension Layout"/>
+<br>
+
+```javascript
+    .width()
+    .height()
+    .innerWidth()
+    .innerHeight()
+    .outerWidth(boolean)
+    .outerHeight(boolean)
+```
+- Each method can be used to return the unitless size of its corresponding box model property (if no parameters are passed).
+- Each method can be supplied a string or number (or function with a string or number return value) to set the size of the box model property.
+- The .outer methods control the border and inner content size by default (false boolean) and margin and inner content size with a true boolean.
+
+**Notes:** These methods should only be called on visible elements. Otherwise, returned values may not be accurate. The size of content from .width() will be accurate, regardless of the box-sizing css property. These properties differ from .css() in return value. For example, .width() returns a unitless pixel value, but .css(width) would return a value with units (such as 400px).
+
+**Example:**
+<p data-height="265" data-theme-id="0" data-slug-hash="oMjaVz" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".boxsizes()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/oMjaVz/">.boxsizes()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<a class="previous" href="./traversal.html"><span>   Previous</span></a>
+<a class="next" href="./Event-and-Animation.html"><span>Next  </span></a>

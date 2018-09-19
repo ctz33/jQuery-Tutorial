@@ -1,0 +1,202 @@
+---
+title: jQuery Event and Animation
+---
+<!-- Author: Mike
+Created: 7/10
+Edit: 7/13 Mike Add explanation and add/change examples
+Edit: 7/14 Channing, final revision.
+Description: jQuery Event and Animation Tutorial -->
+<span id="event"></span>
+# Event
+## Define Event
+An event is a **user's action** on a web page, which triggers interactive responses. For example, a user clicking on a button is a 'click' event.
+## Event Type
+<table>
+<thead>
+<tr>
+<th>Mouse</th>
+<th>Keyboard</th>
+<th>Form</th>
+<th>Document/Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>load</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>keydown</td>
+<td>change (form content)</td>
+<td>resize</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>keyup</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td></td>
+<td>blur (loss focus)</td>
+<td>unload</td>
+</tr>
+</tbody>
+</table>
+> reference from [w3schools](https://www.w3schools.com/Jquery/jquery_events.asp)
+
+<span id="register"></span>
+## Register Event Listener (Create response to events)
+When an event is triggered, an event object is created and sent to the listener. This event object contains all the information related to an event, for example, `eventObj.target` is the JavaScript DOM object that the user triggers the event on. Please visit [JavaScript event tutorial](https://www.w3schools.com/js/js_events.asp) for more information on the event object.
+
+In jQuery, there are **three ways** to register an event listener. When a listener is registered with a jQuery object `$("selector")`, the jQuery object will listen to user's particular action `.eventName()` and perform a predefined action `function(event){...}`. The function parameter `event` is the event object.
+#### 1.Register single event listener:
+
+```javascript
+$("selector").eventName(function(event){...});
+```
+
+<p data-height="411" data-theme-id="0" data-slug-hash="KBwEog" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register single event listener" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/KBwEog/">Register single event listener</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+Note: When two of the same event listeners (e.g. click) are added to the same object, JavaScript `obj.onclick=function` will replace the first listener with the second. However, jQuery will add both listeners and execute their functions according to their order of addition. Please see the following example.
+
+<p data-height="265" data-theme-id="0" data-slug-hash="JBYmPV" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="JBYmPV" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/JBYmPV/">JBYmPV</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### 2. Register single event listener:
+```javascript
+$("selector").on("eventName", function(event){...});
+```
+
+<p data-height="346" data-theme-id="0" data-slug-hash="OwPYXQ" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register single event listener 2" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/OwPYXQ/">Register single event listener 2</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### 3. Register multiple event listener:
+
+```javascript
+$("selector").on({
+eventName1: function(event){...},
+eventName2: function(event){...},
+eventName3: function(event){...}
+});
+```
+
+Note: Adding parenthesis to eventName is optional, but eventName without parenthesis is recommended.
+
+<p data-height="325" data-theme-id="0" data-slug-hash="qyEGRN" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register multiple event listener" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/qyEGRN/">Register multiple event listener</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+-------
+
+# Animation
+
+<span id="animation"></span>
+## Generic Animation
+Create animations to move and change the selected elements. The object will perform an animation to gradually change to the CSS in the {CSSparameters} list.
+
+If more than one animation is called at the same time, or an animation is called before the previous animation ends, an animation queue will hold all the animations and execute them one by one. So, all animations will eventually be executed.
+
+```javascript
+$("selector").animate({CSSparameters}, speed, callback);
+```
+
+Note:
+	<ol>
+		<li>{parameters} is a map of CSS for the element to gradually change to.</li>
+		<li>[optional] "speed" is the speed of animation , and can be written in text or in millisecond.</li>
+	<table>
+	<thead>
+	<tr>
+	<th>Text for speed</th>
+	<th>Time (in ms)</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>N/A</td>
+	<td>9999</td>
+	</tr>
+	<tr>
+	<td>slow</td>
+	<td>600</td>
+	</tr>
+	<tr>
+	<td>normal (default)</td>
+	<td>400</td>
+	</tr>
+	<tr>
+	<td>fast</td>
+	<td>200</td>
+	</tr>
+	<tr>
+	<td>N/A</td>
+	<td>1</td>
+	</tr>
+	</tbody>
+	</table>
+	<li>[optional] callback is a function that is executed after the animation.</li>
+</ol>
+<p data-height="355" data-theme-id="0" data-slug-hash="BPyemP" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="BPyemP" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/BPyemP/">BPyemP</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+
+## Stopping the execution of an animation
+
+If an animation is stopped, the callback function won't be executed. If there is an animation queue, the current animation will be stopped and the following animation will be started.
+
+```javascript
+$("selector").stop(stopAll, goToEnd);
+```
+
+Note:
+
+1. stopAll: clear the animation queue.
+2. goToEnd: complete animation immediately.
+
+<p data-height="417" data-theme-id="0" data-slug-hash="KBwLBj" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="KBwLBj" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/KBwLBj/">KBwLBj</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+-------
+
+<span id="effect"></span>
+# Effect
+Effect can be consider a shortcut for the [generic animation](#animation) discussed above. Effect is a simple way to add an animation to the jQuery objects. All of the following effects can also be created by [generic animation](#animation).
+
+## show and hide effect
+
+```javascript
+$("selector").show(speed, callback);
+$("selector").hide(speed, callback);
+```
+<p data-height="392" data-theme-id="0" data-slug-hash="bjNyQz" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="show and hide" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/bjNyQz/">show and hide</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+## Fade Effect
+
+```javascript
+$("selector").fadeIn(speed, callback);
+$("selector").fadeOut(speed, callback);
+$("selector").fadeToggle(speed, callback);//If current opacity is 1, then change it to 0; reverse-visa
+$("selector").fadeTo(speed, opacity, callback);//Change opacity programmer defined value
+```
+<p data-height="493" data-theme-id="0" data-slug-hash="zLxQQo" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="zLxQQo" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/zLxQQo/">zLxQQo</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+## Slide Effect
+
+```javascript
+$("selector").slideDown(speed, callback);
+$("selector").slideUp(speed, callback);
+$("selector").slideToggle(speed, callback); //If currently shown, then slideUp to hide; reverse-visa
+```
+<p data-height="463" data-theme-id="0" data-slug-hash="yqydBN" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="yqydBN" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/yqydBN/">yqydBN</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<a class="previous" href="./manipulation.html"><span>   Previous</span></a>
+<a class="next" href="./ajax.html"><span>Next  </span></a>

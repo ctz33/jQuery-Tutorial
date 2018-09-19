@@ -1,0 +1,14 @@
+[
+  {
+    "method": "$(selector).each(function)",
+    "description": "Executes a function for each element in the selected elements.",
+    "example": "$(\"p.class-name\").each(function(){this.innerHTML += \" executes function\"})",
+    "returns": "Executes the function that adds \" executes function\" to the end of the text for each &lt;p&gt; element that has a class \"class-name\""
+  },
+  {
+    "method": "$(selector).map(callback)",
+    "description": "Passes each element in the selected elements through a callback function, creating a new jQuery object containing the return values.",
+    "example": "$(\"div\").map(function(){return this.id;})",
+    "returns": "A new jQuery object containing each &lt;div&gt; element’s id"
+  }
+]

@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Traversing Reference</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <h1>jQuery Traversing Reference</h1>
+<div>
+  <h2 id="ancestors">Ancestors</h2>
+  <table id="ancestors-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>.parent([selector])</td>
+          <td>Gets the parent of the selected element, optionally filtered by a selector.</td>
+          <td>$("p").parent()</td>
+          <td>The parent of &lt;p&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.parents([selector])</td>
+          <td>Gets all ancestors of the selected element, optionally filtered by a selector.</td>
+          <td>$("span").parents()</td>
+          <td>All ancestors of the &lt;span&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.parentsUntil([selector] [,filter])</td>
+          <td>Gets all ancestors of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.</td>
+          <td>$("span").parentsUntil("div")</td>
+          <td>All ancestors between &lt;span&gt; and &lt;div&gt; elements (exclusive)</td>
+        </tr>
+        <tr>
+          <td>.closest(selector [,context])</td>
+          <td>Gets the first ancestor of the selected element that matches the selector by traversing up the DOM tree, optionally restricted to the context within which to search for the closest element.</td>
+          <td>$("li#collection").closest("div")</td>
+          <td>Gets the first &lt;div&gt; ancestor of the &lt;li&gt; element which has the id "collection".</td>
+        </tr>
+        <tr>
+          <td>.offsetParent()</td>
+          <td>Gets the closest ancestor element that is positioned. An element is positioned if it has a position attribute of relative, absolute, or fixed.</td>
+          <td>$("p").offsetParent()</td>
+          <td>The closest ancestor element of the &lt;p&gt; element that has a position attribute of realtive, absolute, or fixed</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="descendants">Descendants</h2>
+  <table id="descendants-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>.children([selector])</td>
+          <td>Gets all children of the selected element, optionally filtered by a selector.</td>
+          <td>$("div").children()</td>
+          <td>All child elements of all &lt;div&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.find(selector)</td>
+          <td>Gets all descendants of the selected element that match the selector.</td>
+          <td>$("div").find("li")</td>
+          <td>All &lt;li&gt; elements that are descendants of &lt;div&gt; elements</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="siblings">Siblings</h2>
+  <table id="siblings-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>.prev([selector])</td>
+          <td>Gets the immediately preceding sibling of the selected element, optionally filtered by a selector.</td>
+          <td>$("ul").prev()</td>
+          <td>The immediately preceding siblings of the &lt;ul&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.prevAll([selector])</td>
+          <td>Gets all preceding sibling of the selected element, optionally filtered by a selector.</td>
+          <td>$("ul").prevAll()</td>
+          <td>All preceding siblings of the &lt;ul&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.prevUntil([selector][,filter])</td>
+          <td>Gets all preceding siblings of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.</td>
+          <td>$("ul").prevUntil("h2")</td>
+          <td>All preceding siblings between &lt;ul&gt; and &lt;h2&gt; elements (exclusive).</td>
+        </tr>
+        <tr>
+          <td>.next([selector])</td>
+          <td>Gets the immediately following sibling of the selected element, optionally filtered by a selector. If the selector is provided, it will get the immediately following sibling only if it matches the selector.</td>
+          <td>$("h2").next("p")</td>
+          <td>The immediately following sibling of the &lt;h2&gt; elements if it is a &lt;p&gt; element</td>
+        </tr>
+        <tr>
+          <td>.nextAll([selector])</td>
+          <td>Gets all following sibling of the selected element, optionally filtered by a selector.</td>
+          <td>$("h2").nextAll("p")</td>
+          <td>All following siblings of the &lt;h2&gt; elements that are &lt;p&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.nextUntil([selector][,filter])</td>
+          <td>Gets all following siblings of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.</td>
+          <td>$("h2").nextUntil("p")</td>
+          <td>All following siblings between &lt;h2&gt; and &lt;p&gt; elements (exclusive).</td>
+        </tr>
+        <tr>
+          <td>.siblings([selector])</td>
+          <td>Gets all the siblings of the selected element, optionally filtered by a selector.</td>
+          <td>$("h3").siblings()</td>
+          <td>All siblings of the &lt;h3&gt; elements</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="filtering">Filtering</h2>
+  <table id="filtering-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>.eq(index)</td>
+          <td>Gets the element with specific index among the selected elements.</td>
+          <td>$("li").eq(1)</td>
+          <td>The second &lt;li&gt; element in the document</td>
+        </tr>
+        <tr>
+          <td>.first()</td>
+          <td>Gets the first element of the selected elements.</td>
+          <td>$("li").first()</td>
+          <td>The first &lt;li&gt; element in the document</td>
+        </tr>
+        <tr>
+          <td>.last()</td>
+          <td>Gets the last element of the selected elements.</td>
+          <td>$("li").last()</td>
+          <td>The last &lt;li&gt; element in the document</td>
+        </tr>
+        <tr>
+          <td>.filter(selector/function(index))</td>
+          <td>Gets the elements that matches the selector or pass the function’s test.</td>
+          <td>$("p").filter(".test")</td>
+          <td>All &lt;p&gt; elements that have a class "test".</td>
+        </tr>
+        <tr>
+          <td>.has(selector)</td>
+          <td>Gets all elements that have the selector inside of them.</td>
+          <td>$("p").has("button")</td>
+          <td>All &lt;p&gt; elements that have button elements inside of them</td>
+        </tr>
+        <tr>
+          <td>.is(selector)</td>
+          <td>Checks if the currently selected element matches the selector.</td>
+          <td>$("p#test").parent().is("div")</td>
+          <td>True if the parent of the &lt;p&gt; element with id "test" iis a &lt;div&gt; element; otherwise, false</td>
+        </tr>
+        <tr>
+          <td>.not(selector)</td>
+          <td>Gets all elements inside of the selected elements that do not match the selector.</td>
+          <td>$("p").not(".test")</td>
+          <td>All &lt;p&gt; elements that do not have a class "test"</td>
+        </tr>
+        <tr>
+          <td>.slice(start [,end])</td>
+          <td>Gets a subset of currently selected elements starting with a index number. If the end index is specific, the selection ends with the index (exclusive).</td>
+          <td>$("li").slice(0, 2)</td>
+          <td>The first two &lt;li&gt; elements in the document</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="iteration">Iteration</h2>
+  <table id="iteration-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$(selector).each(function)</td>
+          <td>Executes a function for each element in the selected elements.</td>
+          <td>$("p.class-name").each(function(){this.innerHTML += " executes function"})</td>
+          <td>Executes the function that adds " executes function" to the end of the text for each &lt;p&gt; element that has a class "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(selector).map(callback)</td>
+          <td>Passes each element in the selected elements through a callback function, creating a new jQuery object containing the return values.</td>
+          <td>$("div").map(function(){return this.id;})</td>
+          <td>A new jQuery object containing each &lt;div&gt; element’s id</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="other">Others</h2>
+  <table id="other-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>.add(selector [,context])</td>
+          <td>Adds elements that match the selector to currently selected elements. Context is optional to specify where to start matching the element and the selector.</td>
+          <td>$("p").add("button")</td>
+          <td>The &lt;p&gt; elements and &lt;button&gt; elements</td>
+        </tr>
+        <tr>
+          <td>.addBack([selector])</td>
+          <td>Adds the previous selection to the current selection, optionally filtered by a selector.</td>
+          <td>$("p").next().addBack()</td>
+          <td>The originally selected &lt;p&gt; element and its immediately following sibling.</td>
+        </tr>
+        <tr>
+          <td>.contents()</td>
+          <td>Gets the children of selected element, including text and comment nodes.</td>
+          <td>$("p"#found).contents()</td>
+          <td>Contents of the &lt;p&gt; element with id "found"</td>
+        </tr>
+        <tr>
+          <td>operations.end()</td>
+          <td>Ends the most recent filtering operation and returns the set of selected elements to its previous state.</td>
+          <td>$("div").find("p").end()</td>
+          <td>All &lt;div&gt; elements</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

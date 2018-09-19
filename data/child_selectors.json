@@ -1,0 +1,62 @@
+[
+  {
+    "selector": "$(\":first-child\")",
+    "description": "Selects all elements that are the first child of their parent.",
+    "example": "$(\"p:first-child\")",
+    "selects": "All &lt;p&gt; elements that are the first child of their parent"
+  },
+  {
+    "selector": "$(\":last-child\")",
+    "description": "Selects all elements that are the last child of their parent.",
+    "example": "$(\"p:last-child\")",
+    "selects": "All &lt;p&gt; elements that are the last child of their parent"
+  },
+  {
+    "selector": "$(\":first-of-type\")",
+    "description": "Selects all elements that are the first child of a specific type of their parent.",
+    "example": "$(\"p:first-of-type\")",
+    "selects": "All &lt;p&gt; elements that are the first &lt;p&gt; element of their parent"
+  },
+  {
+    "selector": "$(\":last-of-type\")",
+    "description": "Selects all elements that are the last child of a specific type of their parent.",
+    "example": "$(\"p:last-of-type\")",
+    "selects": "All &lt;p&gt; elements that are the last &lt;p&gt; element of their parent"
+  },
+  {
+    "selector": "$(\":nth-child(n)\")",
+    "description": "Selects all elements that are the nth-child of their parent (index starts with 1). The parameter can be index, even, odd, or an equation.",
+    "example": "$(\"p:nth-child(4)\")",
+    "selects": "All &lt;p&gt; elements that are the 4th child of their parent"
+  },
+  {
+    "selector": "$(\":nth-last-child(n)\")",
+    "description": "Selects all elements that are the nth-child of their parent, counting from the last element(index = 1) to the first. The parameter can be index, even, odd, or an equation.",
+    "example": "$(\"p:nth-last-child(1)\")",
+    "selects": "All &lt;p&gt; elements that are the last child of their parent"
+  },
+  {
+    "selector": "$(\":nth-of-type(n)\")",
+    "description": "Selects all elements that are the nth child of a specific type of their parent (index starts with 1). The parameter can be index, even, odd, or an equation.",
+    "example": "$(\"p:nth-of-type(4)\")",
+    "selects": "All &lt;p&gt; elements that are the 4th &lt;p&gt; element of their parent"
+  },
+  {
+    "selector": "$(\":nth-last-of-type(n)\")",
+    "description": "Selects all elements that are the nth child of a specific type of their parent, counting from the last element(index = 1) to the first. The parameter can be index, even, odd, or an equation.",
+    "example": "$(\"p:nth-last-of-type(1)\")",
+    "selects": "All &lt;p&gt; elements that are the last &lt;p&gt; element of their parent"
+  },
+  {
+    "selector": "$(\":only-child\")",
+    "description": "Selects all elements that are the only child of their parent.",
+    "example": "$(\"p:only-child\")",
+    "selects": "All &lt;p&gt; elements that are the only child of their parent"
+  },
+  {
+    "selector": "$(\":only-of-type\")",
+    "description": "Selects all elements that are the only child of a specific type of their parent.",
+    "example": "$(\"p:only-of-type\")",
+    "selects": "All &lt;p&gt; elements that are the only &lt;p&gt; element of their parent"
+  }
+]

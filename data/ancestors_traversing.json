@@ -1,0 +1,32 @@
+[
+  {
+    "method": ".parent([selector])",
+    "description": "Gets the parent of the selected element, optionally filtered by a selector.",
+    "example": "$(\"p\").parent()",
+    "returns": "The parent of &lt;p&gt; elements"
+  },
+  {
+    "method": ".parents([selector])",
+    "description": "Gets all ancestors of the selected element, optionally filtered by a selector.",
+    "example": "$(\"span\").parents()",
+    "returns": "All ancestors of the &lt;span&gt; elements"
+  },
+  {
+    "method": ".parentsUntil([selector] [,filter])",
+    "description": "Gets all ancestors of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.",
+    "example": "$(\"span\").parentsUntil(\"div\")",
+    "returns": "All ancestors between &lt;span&gt; and &lt;div&gt; elements (exclusive)"
+  },
+  {
+    "method": ".closest(selector [,context])",
+    "description": "Gets the first ancestor of the selected element that matches the selector by traversing up the DOM tree, optionally restricted to the context within which to search for the closest element.",
+    "example": "$(\"li#collection\").closest(\"div\")",
+    "returns": "Gets the first &lt;div&gt; ancestor of the &lt;li&gt; element which has the id \"collection\"."
+  },
+  {
+    "method": ".offsetParent()",
+    "description": "Gets the closest ancestor element that is positioned. An element is positioned if it has a position attribute of relative, absolute, or fixed.",
+    "example": "$(\"p\").offsetParent()",
+    "returns": "The closest ancestor element of the &lt;p&gt; element that has a position attribute of realtive, absolute, or fixed"
+  }
+]

@@ -1,0 +1,48 @@
+---
+title: jQuery Plugins
+---
+<!-- Created by Ariel, minor edits by Channing -->
+
+# Plugins
+jQuery also provides capabilities for developers to create plug-ins on top of the JavaScript library. This adds on the flexibility and functionality of jQuery library. You can find a list of popular plugins from [https://plugins.jquery.com/](https://plugins.jquery.com/).
+
+## Use jQuery Plugins in your projects
+Let's use the [DataTables](https://datatables.net/) plugin as an example. DataTables will help you build a polished table with minimal effort.
+
+The table functions DataTables supports include: sorting, filtering, translation, styling, ajax loading and more.
+
+#### Step 1: Include jQuery and DataTables libraries.
+Add jQuery before jQuery plugin libraries to make sure jQuery will load first. Most of jQuery plugin libraies require jQuery to execute. DataTables has both table functionality and style features, so both css and javascript files are needed.
+
+```html
+<head>
+  <meta charset="utf-8">
+  <title>Plugin Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</head>
+```
+#### Step 2: Have a table ready. Give it a good structure with \<table\>, \<thead\>, \<tbody\>, \<tr\> and \<td\> elements
+\<thead\> and \<tbody\> are children of \<table\> and sibings in the DOM Tree. \<thead\> indicates table header and \<tbody\> indicates table body. In the example table, \<thead\> is a row of column names and \<tbody\> is rows of data.
+
+ <p data-height="265" data-theme-id="0" data-slug-hash="BPNZKb" data-default-tab="html,result" data-user="Arietta" data-embed-version="2" data-pen-title="Original Table" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/BPNZKb/">Original Table</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Step 3: Select the table by id and add the DataTable style by adding ```$('#tableid').DataTable()``` to javascript file
+Make sure to add the DataTable plugin after table is loaded because DataTables need data to generate table and trigger features. If your table is not empty but indicates "Showing 0 to 0 of 0 entries", you may want to use ```$(document).ready``` or ```setTimeout``` or callback functions to load table first.
+
+ <p data-height="265" data-theme-id="0" data-slug-hash="XBbgzR" data-default-tab="js,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/XBbgzR/">dataTable</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+ <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Step 4: Add a quick style to table by adding "display" class to table
+You can add styles by adding class names to the table. Class names including "cell-border", "compact", "hover", "order-column", "row-border" and "stripe" enable style features. The "display" class is a short-cut for specifying the "stripe", "hover", "order-column" and "row-border" as the class name for a table.
+ <p data-height="265" data-theme-id="0" data-slug-hash="bjdRvG" data-default-tab="html,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable with style" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/bjdRvG/">dataTable with style</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+ <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+#### Step 5: Sort the table by specify the column and order
+```$('#tableid').DataTable()```  will take in a javascript object with a collection of name-value pairs. We set a 2-D array as the value of 'order' and each inner array is comprised of two elements: column and order. Column starts from 0 and order can be 'asc' for ascending or 'desc' for descending. In this example, we set the 'Campus' and 'Area' column to ascending order.
+<p data-height="265" data-theme-id="0" data-slug-hash="GBoRwY" data-default-tab="js,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable with order" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/GBoRwY/">dataTable with order</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+ <a class="previous" href="./ajax.html"><span>   Previous</span></a>

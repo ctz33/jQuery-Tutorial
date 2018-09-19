@@ -1,0 +1,365 @@
+---
+title: jQuery Selectors
+---
+<!-- Author: Gail Chen
+Created: 7/11
+Edit: 7/12 Gail added more paragraphs.
+Edit: 7/14 Channing, final revisions
+Description: jQuery Selector Tutorial -->
+
+<h1>jQuery Selectors</h1>
+Whenever you want to <a href="./manipulation.html">manipulate</a> the contents
+of elements, or <a href="./Event-and-Animation.html">add events and animation</a>
+to elements, you need to select the elements first. Most jQuery selectors are
+similar to CSS selectors, but jQuery also has its own custom selectors.
+
+Compared to Javascript, jQuery selectors simplify the code by allowing you to select one or more
+elements based on their tags, ids, classes, indices, attributes, contents, etc.
+For example, to select an element with id "tutorial", ```document.getElementById("tutorial")```
+is used in Javascript, whereas ```$("#tutorial")``` is used in jQuery.
+
+All jQuery selectors start with the dollar sign and parentheses: $(). The dollar sign($)
+indicates the following is a jQuery function.
+
+
+<h2 id="basic">Basic Selectors</h2>
+Basic selectors allow you to select elements based on their tag names, ids, classs, index, etc.
+These selectors use zero-based indexing which means the index starts at 0.
+If you want to select a group of elements that fulfill different selectors,
+you can use $("selector 1, selector 2, ... , selector N") to get combined result of multiple selectors.
+
+For a complete reference of all the jQuery basic selectors, please visit
+<a href="./selector_reference.html#basic">jQuery Selectors Reference</a>.
+
+### The element Selector
+
+<p>Selects elements based on their tag names.</p>
+
+Example:
+
+```javascript
+  //Selects all <p> elements in the document
+  $("p")
+```
+
+### The #id Selector
+
+An id is unique within a page so the id selector is used to find a single element with the specific id.
+To use the id selector, write a hashtag(#) followed by the value of the id attribute of the element.
+
+Example:
+
+```javascript
+  //Selects the <p> element that has an id "test-id"
+  $("p#test-id")
+```
+
+### The .class Selector
+
+Selects all elements that have a specific class. To use the id selector,
+write a dot(.) followed by the class name.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that have a class "test-class".
+  $("p.test-class")
+```
+
+### The :eq(index) Selector
+
+Selects the element with the specific index.
+
+Example:
+
+```javascript
+  //Selects the 4th <p> element in the document.
+  $("p:eq(3)")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="ZjYONr" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Basic Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/ZjYONr/">jQuery Basic Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="attribute">Attribute Selectors</h2>
+Attribute selectors help select elements based on the existence and the value of
+their attributes. The common syntax for using the attribute selectors is to write
+the attribute name and its value inside of the square brackets([ ]), connecting
+the attribute name and its value by the equals sign(=). The attribute selectors
+that provide a sign(|, ^, $, *, ~) before the equal sign, select the elements with
+attibutes that fix a regular expression.
+
+For a complete reference of all the jQuery attribute selectors, please visit
+<a href="./selector_reference.html#attribute">jQuery Selectors Reference</a>.
+
+### The Has Attribute Selector [attribute]
+
+Selects all elements that have specific attribute.
+
+Example:
+
+```javascript
+  //Selects all elements that have a type attribute.
+  $("[type]")
+```
+
+### The Attribute Equals Selector [attribute=value]
+
+Selects all elements that have specific attribute with specific value.
+
+Example:
+
+```javascript
+  //Selects all elements that have a type attribute with value "text".
+  $("[type='text']")
+```
+
+### The Attribute Starts With Selector [attribute^=value]
+
+Selects all elements that have the specific attribute with a value starting with the specific value.
+
+Example:
+
+```javascript
+  //Selects all elements that have a title attribute whose value is starting with "Hi".
+  $("[title^='Hi']")
+```
+
+<p data-height="300" data-theme-id="0" data-slug-hash="JBogeP" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Attribute Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/JBogeP/">jQuery  Attribute Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="child">Child Selectors</h2>
+Child selectors help select the children of an element based on their index or type.
+These selectors use one-based indexing which means the index starts at 1.
+
+For a complete reference of all the jQuery child selectors, please visit
+<a href="./selector_reference.html#child">jQuery Selectors Reference</a>.
+
+### :first-child
+
+Selects all elements that are the first child of their parent.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that are the first child of their parent
+  $("p:first-child")
+```
+
+### :first-of-type
+
+Selects all elements that are the first child of a specific type of their parent.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that are the first <p> element of their parent
+  $("p:first-of-type")
+```
+
+### :nth-last-child(n)
+
+Selects all elements that are the nth-child of their parent, counting from the
+last element(index = 1) to the first. The parameter can be an integer greater than
+or equal to 1, the strings even and odd, or an equation like 3n.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that are the last child of their parent
+  $("p:nth-last-child(1)")
+```
+
+<p data-height="470" data-theme-id="0" data-slug-hash="MBwgoM" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Child Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/MBwgoM/">jQuery Child Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="content">Content Selectors</h2>
+Content selectors help select elements based on their contents.
+
+### :contains(text)
+
+Selects all elements that contain specific text.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that contain "hello"
+  $("p:contains(hello)")
+```
+
+### :has(selector)
+
+Selects elements which contain the element(s) that matches the specific selector.
+
+Example:
+
+```javascript
+  //Selects all <div> elements that have <p> element(s) inside of them
+  $("div:has(p)")
+```
+
+### :empty
+
+Selects all elements that have no children(including text).
+
+Example:
+
+```javascript
+  //Selects all empty <td> elements
+  $("td:empty")
+```
+
+### :parent
+
+Selects all elements that are the parent of another element(including text).
+
+Example:
+
+```javascript
+  //Selects all <button> elements that are the parent of another element.
+  $("button:parent")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="xJGKQg" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Content Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/xJGKQg/">jQuery  Content Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="form">Form Selectors</h2>
+Form selectors help select form elements based on their types and status(e.g. checked,
+selected, disabled, enabled, focus). They shorten the code to select form elements.
+For example, instead of using $("button, input[type='button']"), you can use
+$(":button") to select all button elements and elements of type button. The
+$(":enabled") and $("disabled") selectors can only be used on elements that support
+disabled attribute; which includes \<button\>, \<fieldset\>, \<input\>, \<select\>,
+\<optgroup\>, \<option\>, \<textare\>.
+
+For a complete reference of all the jQuery form selectors, please visit
+<a href="./selector_reference.html#form">jQuery Selectors Reference</a>.
+
+### :button
+
+Selects all button elements and elements of type button.
+
+Example:
+
+```javascript
+  //Selects all input elements of type button whose class is "class-name".
+  $(".class-name:button")
+```
+
+### :checked
+
+Selects all checkboxes, radio buttons and options of select elements that are
+checked or selected. It you just want to select options of select elements,
+use :selected instead.
+
+Example:
+
+```javascript
+  //Selects all elements with class "class-name" that are checked
+  $(".class-name:checked")
+```
+
+### :focus
+
+Selects elements that are currently focused.
+
+Example:
+
+```javascript
+  //Selects the <input> element that is currently focused.
+  $("input:focus")
+```
+
+<p data-height="300" data-theme-id="0" data-slug-hash="MBwWey" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Form Selectors" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/MBwWey/">jQuery  Form Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="hierarchy">Hierarchy Selectors</h2>
+Hierarchy selectors help select elements based on the hierarchy in the DOM tree.
+An ancestor is a parent, grandparent, etc. A descendant is a child, grandchild,
+etc. Detailed explaination of hierarchy can be found in
+<a href="./traversal.html">jQuery Traversing</a> under Ancestors, Descendants and Siblings sections.
+
+### Descendant selector ("ancestor descendant")
+
+Selects all descendant elements of a specific ancestor.
+
+Example:
+
+```javascript
+  //Selects all <p> elements that are descendants of <div> elements
+  $("div p")
+```
+
+### Child selector ("parent > child")
+
+Selects all direct child elements specified by "child" of elements specified by "parent".
+
+Example:
+
+```javascript
+  //Selects all <button> elements that are children of <div> elements
+  $("div > button")
+```
+
+### Next adjacent selector ("prev + next")
+
+Selects all first "next" elements that follow right after the "prev" element.
+
+Example:
+
+```javascript
+  //Selects all <button> elements that are the immediately following siblings of each <p> element
+  $("p + button")
+```
+
+### Next Siblings selector ("prev ~ siblings")
+
+Selects all "siblings" elements that follow after the "prev" element
+
+Example:
+
+```javascript
+  //Selects all <p> elements that are the following siblings of <button> elements
+  $("button ~ p")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="oMXgLR" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Hierarchy" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/oMXgLR/">jQuery  Hierarchy</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="visibility">Visibility Selectors</h2>
+Visibility selectors help select elements based on their visibility. An element
+is considered hidden if its display property is set to none, its width and
+height are set to zero, any of its ancestors is hidden, or it is a form element
+with type attribute set to "hidden". Elements with their opacity set to 0 or
+visibility set to hidden are still considered visible.
+
+### :visible
+
+Selects all elements that are visible.
+
+Example:
+
+```javascript
+  //Selects all visible <div> elements
+  $("div:visible")
+```
+
+### :hidden
+
+Selects all elements that are hidden.
+
+Example:
+
+```javascript
+  //Selects all hidden <div> elements
+  $("div:hidden")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="RBPNOo" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Visibility Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/RBPNOo/">jQuery Visibility Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<a class="previous" href="./index.html"><span>   Previous</span></a>
+<a class="next" href="./traversal.html"><span>Next  </span></a>

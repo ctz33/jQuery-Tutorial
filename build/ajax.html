@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery AJAX</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section active">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Created by Channing Jacobs -->
+
+<h1>jQuery AJAX</h1>
+
+<p>Web pages traditionally must be reloaded to update their content. This was wasteful as reloading included data such as HTML, CSS, and JavaScript that the user has already downloaded. This problem was solved by using a technology called AJAX. AJAX stands for Asynchronous Javascript and XML. AJAX is a standardized technology that uses an object called XMLHttpRequest (XHR) to pass data between a client and server in the background. The data may be, but is not limited to: text, HTML, XML, or JSON.</p>
+
+<p>Together, XHR and AJAX allows for web page content to be updated, without reloading the web page. AJAX not only saves bandwidth, but also removes the need for user input. Services such as GMail use AJAX to allow for emails to “appear” in a user’s inbox without the need for the user to manually refresh the page.</p>
+
+<p>AJAX is triggered by JavaScript code. This code sends a request to a URL. A response message is later returned to a provided callback function. This request and response are asynchronous. Therefore, the rest of the user’s code can continue execution without waiting for the request to be processed. The callback function guarantees that the inner function will not execute until the parent finishes execution.</p>
+
+<p>One of the largest challenges when using AJAX is implementing it across different browsers. Each browser may implement the AJAX API differently. jQuery handles these differences and provides jQuery AJAX methods that work on all browsers. The standard method is $.ajax(). There are also many helper functions that simplify $.ajax() by filling in most of the content for the user. We will talk about both, but $.ajax() is recommended for greater control.</p>
+
+<p><strong>Note:</strong> Without special setup, AJAX does not work across domains. If a web page is loaded from mywebsite.com, it can’t make an AJAX request to yourwebsite.com. This is called the “same-origin policy” and is used to prevent an attack called cross-site scripting (XSS).</p>
+
+<h2>Helper Functions</h2>
+
+<p>jQuery provides two generic, global helper functions and one generic helper method for getting data from a server. We will start with the methods.</p>
+
+<h3>Getting Data</h3>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="nx">$</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span><span class="nx">payload</span><span class="p">][,</span><span class="nx">success</span><span class="p">][,</span><span class="nx">dataType</span><span class="p">])</span>
+</code></pre></div>
+<p>This method sends an HTTP GET request to the server. The user must specify the url as a String (Ex: “data/test_data.html” could be used to load data from the local machine). The other three parameters are optional. The payload is data (a JavaScript object or string) that will be sent to the server. The success is the callback function to execute when a successful response returns (there is no guarantee of it executing). The success callback must be provided if dataType is defined (although null may be used in place of the function). The dataType is a string of the expected type of data (xml, javascript, etc.) from the server (it is guessed by jQuery if not provided).</p>
+
+<p><strong>Note:</strong> If the dataType does not match the data type sent from the server, then the request is still be successful. This could lead to errors in code that expects certain data types. Thus, it’s best to check not only for success, but for the correct data type. This can be done with the jQuery AJAX call.</p>
+
+<h3>Sending Data</h3>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span><span class="nx">payload</span><span class="p">][,</span><span class="nx">success</span><span class="p">][,</span><span class="nx">dataType</span><span class="p">])</span>
+</code></pre></div>
+<p>The post method sends an HTTP POST request to the server. The user must specify the URL as a String. The other parameters are optional and have the same meaning as with $.get().</p>
+
+<h3>Loading Data</h3>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">URL</span><span class="p">[,</span> <span class="nx">payload</span><span class="p">][,</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">response_text</span><span class="p">,</span> <span class="nx">status_text</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">)])</span>
+</code></pre></div>
+<p>The load method is called on a selected element. It fetches HTML from a URL and populates the selected element with the returned HTML. The user must specify the URL as a String. The optional payload is data that will be sent to the server. The optional callback function is called after the html is inserted. The callback will be passed response<em>text which contains the HTML string received from the server. The status</em>text will be a string such as “success” or “error”. The xhr is a <a href="http://api.jquery.com/jQuery.ajax/#jqXHR">jqXHR object</a>. It may be user to analyze the HTTP response thoroughly.</p>
+
+<p><strong>Note:</strong> The helper functions do not offer callbacks for failure. jQuery does not offer helper methods for PUT or DELETE because these operations are not supported by all browsers.</p>
+
+<p><strong>Note:</strong> The URL may contain a selector to specify a subset of HTML from the HTML file loaded. (Ex: “data.txt #navbar”).</p>
+
+<h2>Core Function</h2>
+
+<p>Finally, we will look at the global jQuery AJAX call. This is the core function used by the helper functions.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">call_object</span><span class="p">)</span>
+</code></pre></div>
+<p>The call_object is a JavaScript object containing key:value pairs and callback functions.</p>
+
+<p>Let’s discuss a few of the common call_object properties.</p>
+
+<ul>
+<li>The async key accepts a boolean value. A true value means the request is asynchronous; while false means synchronous. Synchronous AJAX calls will pause the flow of execution until a response returns. The default is value true.</li>
+<li>The cache key accepts a boolean value. A true value means that all dataTypes (except script and jsonp) will be cached for use by new AJAX calls. The default is true.</li>
+<li>The data key accepts a string or object value. The value will be converted into a query string in the url.</li>
+<li>The dataType key accepts a string value. The value should be a MIME type that the client expects from the server.</li>
+<li>The timeout key accepts a number value. The value is the time. before the request fails, in milliseconds.</li>
+<li>The type key accepts a string value. The value is the type of HTTP request (“GET”. “POST, “PUT”, or “DELETE”).</li>
+<li>The url key accepts a string value. The value should be a valid url to a server or local resource.</li>
+</ul>
+
+<p>There are three methods that can be used to control the flow of execution after receiving a response. These methods should be called on the return value from the $.ajax() call.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">error</span><span class="p">){</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">status</span><span class="p">){</span> <span class="p">})</span>
+</code></pre></div>
+<p>The .done() method runs when an AJAX request succeeded. It can take a callback function; which will be passed the payload from the response.</p>
+
+<p>The .fail() method runs when an AJAX request failed. It can take a callback function. The callback function will be passed the jQXHR object, the status string containing the status of the request, and the error that was thrown.</p>
+
+<p>The .always() method will run after every AJAX call. It can take a callback function. This function is passed the jQXHR object and the status string of the request.</p>
+
+<p>A general layout for an AJAX call is shown in the example below. In the example, html is loaded from another document on the CodePen website. The complete list for uses of the AJAX function is <a href="http://api.jquery.com/jQuery.ajax/">here</a>.</p>
+
+<p><strong>Example:</strong>
+<p data-height="512" data-theme-id="0" data-slug-hash="NBxxxP" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="AJAX" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/NBxxxP/">AJAX</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<p><strong>Note:</strong> AJAX can be used to <a href="https://learn.jquery.com/ajax/ajax-and-forms/">interact with forms</a>.</p>
+
+<p><a class="previous" href="./Event-and-Animation.html"><span>   Previous</span></a>
+<a class="next" href="./plugin.html"><span>Next  </span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

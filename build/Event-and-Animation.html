@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Event and Animation</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section active">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Author: Mike
+Created: 7/10
+Edit: 7/13 Mike Add explanation and add/change examples
+Edit: 7/14 Channing, final revision.
+Description: jQuery Event and Animation Tutorial -->
+
+<p><span id="event"></span></p>
+
+<h1>Event</h1>
+
+<h2>Define Event</h2>
+
+<p>An event is a <strong>user&#39;s action</strong> on a web page, which triggers interactive responses. For example, a user clicking on a button is a &#39;click&#39; event.</p>
+
+<h2>Event Type</h2>
+
+<table>
+<thead>
+<tr>
+<th>Mouse</th>
+<th>Keyboard</th>
+<th>Form</th>
+<th>Document/Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>load</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>keydown</td>
+<td>change (form content)</td>
+<td>resize</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>keyup</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td></td>
+<td>blur (loss focus)</td>
+<td>unload</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>reference from <a href="https://www.w3schools.com/Jquery/jquery_events.asp">w3schools</a></p>
+</blockquote>
+
+<p><span id="register"></span></p>
+
+<h2>Register Event Listener (Create response to events)</h2>
+
+<p>When an event is triggered, an event object is created and sent to the listener. This event object contains all the information related to an event, for example, <code>eventObj.target</code> is the JavaScript DOM object that the user triggers the event on. Please visit <a href="https://www.w3schools.com/js/js_events.asp">JavaScript event tutorial</a> for more information on the event object.</p>
+
+<p>In jQuery, there are <strong>three ways</strong> to register an event listener. When a listener is registered with a jQuery object <code>$(&quot;selector&quot;)</code>, the jQuery object will listen to user&#39;s particular action <code>.eventName()</code> and perform a predefined action <code>function(event){...}</code>. The function parameter <code>event</code> is the event object.</p>
+
+<h4>1.Register single event listener:</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">eventName</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){...});</span>
+</code></pre></div>
+<p data-height="411" data-theme-id="0" data-slug-hash="KBwEog" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register single event listener" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/KBwEog/">Register single event listener</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>Note: When two of the same event listeners (e.g. click) are added to the same object, JavaScript <code>obj.onclick=function</code> will replace the first listener with the second. However, jQuery will add both listeners and execute their functions according to their order of addition. Please see the following example.</p>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="JBYmPV" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="JBYmPV" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/JBYmPV/">JBYmPV</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h4>2. Register single event listener:</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"eventName"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){...});</span>
+</code></pre></div>
+<p data-height="346" data-theme-id="0" data-slug-hash="OwPYXQ" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register single event listener 2" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/OwPYXQ/">Register single event listener 2</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h4>3. Register multiple event listener:</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">on</span><span class="p">({</span>
+<span class="na">eventName1</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){...},</span>
+<span class="na">eventName2</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){...},</span>
+<span class="na">eventName3</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){...}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Note: Adding parenthesis to eventName is optional, but eventName without parenthesis is recommended.</p>
+
+<p data-height="325" data-theme-id="0" data-slug-hash="qyEGRN" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="Register multiple event listener" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/qyEGRN/">Register multiple event listener</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+
+<h1>Animation</h1>
+
+<p><span id="animation"></span></p>
+
+<h2>Generic Animation</h2>
+
+<p>Create animations to move and change the selected elements. The object will perform an animation to gradually change to the CSS in the {CSSparameters} list.</p>
+
+<p>If more than one animation is called at the same time, or an animation is called before the previous animation ends, an animation queue will hold all the animations and execute them one by one. So, all animations will eventually be executed.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">CSSparameters</span><span class="p">},</span> <span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+</code></pre></div>
+<p>Note:
+    <ol>
+        <li>{parameters} is a map of CSS for the element to gradually change to.</li>
+        <li>[optional] &quot;speed&quot; is the speed of animation , and can be written in text or in millisecond.</li>
+    <table>
+    <thead>
+    <tr>
+    <th>Text for speed</th>
+    <th>Time (in ms)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>N/A</td>
+    <td>9999</td>
+    </tr>
+    <tr>
+    <td>slow</td>
+    <td>600</td>
+    </tr>
+    <tr>
+    <td>normal (default)</td>
+    <td>400</td>
+    </tr>
+    <tr>
+    <td>fast</td>
+    <td>200</td>
+    </tr>
+    <tr>
+    <td>N/A</td>
+    <td>1</td>
+    </tr>
+    </tbody>
+    </table>
+    <li>[optional] callback is a function that is executed after the animation.</li>
+</ol>
+<p data-height="355" data-theme-id="0" data-slug-hash="BPyemP" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="BPyemP" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/BPyemP/">BPyemP</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h2>Stopping the execution of an animation</h2>
+
+<p>If an animation is stopped, the callback function won&#39;t be executed. If there is an animation queue, the current animation will be stopped and the following animation will be started.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="nx">stopAll</span><span class="p">,</span> <span class="nx">goToEnd</span><span class="p">);</span>
+</code></pre></div>
+<p>Note:</p>
+
+<ol>
+<li>stopAll: clear the animation queue.</li>
+<li>goToEnd: complete animation immediately.</li>
+</ol>
+
+<p data-height="417" data-theme-id="0" data-slug-hash="KBwLBj" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="KBwLBj" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/KBwLBj/">KBwLBj</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+
+<p><span id="effect"></span></p>
+
+<h1>Effect</h1>
+
+<p>Effect can be consider a shortcut for the <a href="#animation">generic animation</a> discussed above. Effect is a simple way to add an animation to the jQuery objects. All of the following effects can also be created by <a href="#animation">generic animation</a>.</p>
+
+<h2>show and hide effect</h2>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+</code></pre></div>
+<p data-height="392" data-theme-id="0" data-slug-hash="bjNyQz" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="show and hide" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/bjNyQz/">show and hide</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2>Fade Effect</h2>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">fadeToggle</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span><span class="c1">//If current opacity is 1, then change it to 0; reverse-visa</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">opacity</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span><span class="c1">//Change opacity programmer defined value</span>
+</code></pre></div>
+<p data-height="493" data-theme-id="0" data-slug-hash="zLxQQo" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="zLxQQo" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/zLxQQo/">zLxQQo</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2>Slide Effect</h2>
+<div class="highlight"><pre class="syntax-highlight javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"selector"</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span> <span class="c1">//If currently shown, then slideUp to hide; reverse-visa</span>
+</code></pre></div>
+<p data-height="463" data-theme-id="0" data-slug-hash="yqydBN" data-default-tab="html,result" data-user="mikelin2018" data-embed-version="2" data-pen-title="yqydBN" class="codepen">See the Pen <a href="https://codepen.io/mikelin2018/pen/yqydBN/">yqydBN</a> by Mike_Lin (<a href="https://codepen.io/mikelin2018">@mikelin2018</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p><a class="previous" href="./manipulation.html"><span>   Previous</span></a>
+<a class="next" href="./ajax.html"><span>Next  </span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Traversing</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section active">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Author: Gail Chen
+Created: 7/11
+Edit: 7/13 Gail added more paragraphs.
+Edit: 7/14 Channing, final revision.
+Description: jQuery Traversing Tutorial -->
+
+<h1>jQuery Traversing</h1>
+
+<p>Traversing means after selecting an element or elements, you can select other elements
+based on their relationships to the selected element(s).
+To select elements based on the hierarchy in the DOM tree, you can use either
+<a href="./selectors.html#hierarchy">hierarchy selectors</a> or traversal methods.
+jQuery provies a variety of traversal methods to access the selected elements&#39;
+ancestors(parent, grandparent, etc), descendants(child, grandchild, etc) and
+siblings(share the same parent). With traversal methods, you can also select
+specific elements from the selected elements, add more elements to your selection,
+and execute a function for every selected element with only one line of code.</p>
+
+<p>Since the traversal methods are used after selecting some elements, the syntax is
+$(selector).method([param]). Not all traversal methods require parameters.</p>
+
+<h2 id="ancestors">Ancestors</h2>
+
+<p>An ancestor of an element &#39;elt&#39; is an element that is above the &#39;elt&#39; element in the DOM tree. Ancestors include parent, grandparent, etc.</p>
+
+<p>In the DOM tree shown below,</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;body&gt; element is the parent of the &lt;div&gt; element.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;div&gt; element is the parent of &lt;h2&gt;, &lt;p&gt; and &lt;ul&gt; elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;ul&gt; element is the parent and the ancestor of three &lt;li&gt; elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;body&gt; element is the ancestor of all the other elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;div&gt; element is the ancestor of &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt; elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found"></p>
+
+<p>For a complete reference of all the jQuery methods of getting ancestors, please visit <a href="./traversal_reference.html#ancestors">jQuery Traversing Reference</a>.</p>
+
+<h3>.parent([selector])</h3>
+
+<p>Gets the parent of the selected element, optionally filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns the parent of &lt;p&gt; elements.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">parent</span><span class="p">()</span>
+</code></pre></div>
+<h3>.parents([selector])</h3>
+
+<p>Gets all ancestors of the selected element, optionally filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all ancestors of the &lt;span&gt; elements.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"span"</span><span class="p">).</span><span class="nx">parents</span><span class="p">()</span>
+</code></pre></div>
+<h3>.parentsUntil([selector][, filter])</h3>
+
+<p>Gets all ancestors of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all ancestors between &lt;span&gt; and &lt;div&gt; elements (exclusive).</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"span"</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">"div"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="XBbXOG" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Ancestors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/XBbXOG/">jQuery Traversing Siblings</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="descendants">Descendants</h2>
+
+<p>A descendant of an element &#39;elt&#39; is an element that is below the &#39;elt&#39; element in the DOM tree. Descendants include children, grandchildren, etc.</p>
+
+<p>In the DOM tree shown below,</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The &lt;div&gt; element is a child of the &lt;body&gt; element.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;, &lt;p&gt; and &lt;ul&gt; elements are children of the &lt;div&gt; element.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three &lt;li&gt; elements are children of the &lt;ul&gt; element.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt; elements are descendants of &lt;div&gt; and &lt;body&gt; elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt; elements are also descendants of &lt;ul&gt; elements.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found"></p>
+
+<h3>.children([selector])</h3>
+
+<p>Gets all children of the selected element, optionally filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all child elements of all &lt;p&gt; elements.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">children</span><span class="p">()</span>
+</code></pre></div>
+<h3>.find(selector)</h3>
+
+<p>Gets all descendants of the selected element, filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all &lt;li&gt; elements that are descendants of &lt;div&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div"</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">"li"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="yqNYqg" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Descendants" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/yqNYqg/">jQuery Traversing Descendants</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="siblings">Siblings</h2>
+
+<p>Siblings share the same parent element.</p>
+
+<p>In the DOM tree shown below,</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;, &lt;p&gt; and &lt;ul&gt; elements are siblings.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three &lt;li&gt; elements are siblings.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found"></p>
+
+<p>For a complete reference of all the jQuery methods of getting siblings, please visit <a href="./traversal_reference.html#siblings">jQuery Traversing Reference</a>.</p>
+
+<h3>.next([selector])</h3>
+
+<p>Gets the immediately following sibling of the selected element, optionally filtered by a selector.
+If the selector is provided, it will get the immediately following sibling only if
+it matches the selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns the immediately following sibling of the &lt;h2&gt; elements if it is a &lt;p&gt; element.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s2">"p"</span><span class="p">)</span>
+</code></pre></div>
+<h3>.nextAll([selector])</h3>
+
+<p>Gets all following siblings of the selected element, optionally filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all following siblings of the &lt;h2&gt; elements that are &lt;p&gt; elements.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">(</span><span class="s2">"p"</span><span class="p">)</span>
+</code></pre></div>
+<h3>.nextUntil([selector][, filter])</h3>
+
+<p>Gets all following siblings of the selected element up to but not including the element that matches the selector, optionally filtered by a filter.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all following siblings between &lt;h2&gt; and &lt;p&gt; elements (exclusive).</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"h2"</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s2">"p"</span><span class="p">)</span>
+</code></pre></div>
+<h3>.siblings([selector])</h3>
+
+<p>Gets all the siblings of the selected element, optionally filtered by a selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns all the siblings of the &lt;h3&gt; elements.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"h3"</span><span class="p">).</span><span class="nx">siblings</span><span class="p">()</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="gjpwKw" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Siblings" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/gjpwKw/">jQuery Traversing Siblings</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="filtering">Filtering</h2>
+
+<p>Filtering methods allow you to select specific elements among the selected elements
+based on different conditions including position(index), content, class, attribute, etc.</p>
+
+<p>For a complete reference of all the jQuery filtering methods, please visit <a href="./traversal_reference.html#filtering">jQuery Traversing Reference</a>.</p>
+
+<h3>.eq(index)</h3>
+
+<p>Gets the element with specific index among the selected elements.
+It uses zero-based indexing which means the index starts with 0.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns the second &lt;li&gt; element in the document.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h3>.first()</h3>
+
+<p>Gets the first element of the selected elements.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns the first &lt;li&gt; element in the document.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"li"</span><span class="p">).</span><span class="nx">first</span><span class="p">()</span>
+</code></pre></div>
+<h3>.filter(selector/function(index))</h3>
+
+<p>Gets the elements that match the selector or pass the function’s test.
+The function uses index as a parameter. For each element of the selected elements,
+if the function returns true, the element will be kept; otherwise, the element
+will be filtered out.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns &lt;p&gt; elements that have a class "test-class".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">".test-class"</span><span class="p">)</span>
+
+  <span class="c1">//Sets the background color of &lt;p&gt; elements with even index to lightblue.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}).</span><span class="nx">css</span><span class="p">(</span><span class="s1">'background-color'</span><span class="p">,</span> <span class="s1">'lightblue'</span><span class="p">);</span>
+</code></pre></div>
+<h3>.not(selector)</h3>
+
+<p>Gets all elements inside of the selected elements that don’t match the selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Returns &lt;p&gt; elements that do not have a class "test-class".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">".test-class"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="400" data-theme-id="0" data-slug-hash="NBqgXW" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Filtering" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/NBqgXW/">jQuery Traversing Filtering</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="iteration">Iteration</h2>
+
+<p>Iteration methods iterate through every selected element.
+They are recommended to use if you want to update or display every selected element.</p>
+
+<h3>.each(function)</h3>
+
+<p>Executes a function for each element in the selected elements.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Executes the function that adds " executes function" to the end of the text</span>
+  <span class="c1">//for each &lt;p&gt; element that has a class "class-name".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p.class-name"</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">" executes function"</span><span class="p">;</span>
+  <span class="p">});</span>
+</code></pre></div>
+<h3>.map(callback)</h3>
+
+<p>Passes each element in the selected elements through a callback function,
+creating a new jQuery object containing the return values. The returned jQuery
+object contains an array and you can use the <code>get()</code> method to work with an array.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Creates a new jQuery object containing each &lt;div&gt; element’s id.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div"</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+  <span class="p">})</span>
+</code></pre></div>
+<p data-height="400" data-theme-id="0" data-slug-hash="oMXGvj" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Iteration" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/oMXGvj/">jQuery Traversing Iteration</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p><a class="previous" href="./selectors.html"><span>   Previous</span></a>
+<a class="next" href="./manipulation.html"><span>Next  </span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

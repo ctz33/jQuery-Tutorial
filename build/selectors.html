@@ -1,0 +1,589 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Selectors</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section active">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Author: Gail Chen
+Created: 7/11
+Edit: 7/12 Gail added more paragraphs.
+Edit: 7/14 Channing, final revisions
+Description: jQuery Selector Tutorial -->
+
+<h1>jQuery Selectors</h1>
+
+<p>Whenever you want to <a href="./manipulation.html">manipulate</a> the contents
+of elements, or <a href="./Event-and-Animation.html">add events and animation</a>
+to elements, you need to select the elements first. Most jQuery selectors are
+similar to CSS selectors, but jQuery also has its own custom selectors.</p>
+
+<p>Compared to Javascript, jQuery selectors simplify the code by allowing you to select one or more
+elements based on their tags, ids, classes, indices, attributes, contents, etc.
+For example, to select an element with id &quot;tutorial&quot;, <code>document.getElementById(&quot;tutorial&quot;)</code>
+is used in Javascript, whereas <code>$(&quot;#tutorial&quot;)</code> is used in jQuery.</p>
+
+<p>All jQuery selectors start with the dollar sign and parentheses: $(). The dollar sign($)
+indicates the following is a jQuery function.</p>
+
+<h2 id="basic">Basic Selectors</h2>
+
+<p>Basic selectors allow you to select elements based on their tag names, ids, classs, index, etc.
+These selectors use zero-based indexing which means the index starts at 0.
+If you want to select a group of elements that fulfill different selectors,
+you can use $(&quot;selector 1, selector 2, ... , selector N&quot;) to get combined result of multiple selectors.</p>
+
+<p>For a complete reference of all the jQuery basic selectors, please visit
+<a href="./selector_reference.html#basic">jQuery Selectors Reference</a>.</p>
+
+<h3>The element Selector</h3>
+
+<p>Selects elements based on their tag names.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements in the document</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p"</span><span class="p">)</span>
+</code></pre></div>
+<h3>The #id Selector</h3>
+
+<p>An id is unique within a page so the id selector is used to find a single element with the specific id.
+To use the id selector, write a hashtag(#) followed by the value of the id attribute of the element.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects the &lt;p&gt; element that has an id "test-id"</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p#test-id"</span><span class="p">)</span>
+</code></pre></div>
+<h3>The .class Selector</h3>
+
+<p>Selects all elements that have a specific class. To use the id selector,
+write a dot(.) followed by the class name.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that have a class "test-class".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p.test-class"</span><span class="p">)</span>
+</code></pre></div>
+<h3>The :eq(index) Selector</h3>
+
+<p>Selects the element with the specific index.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects the 4th &lt;p&gt; element in the document.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p:eq(3)"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="ZjYONr" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Basic Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/ZjYONr/">jQuery Basic Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="attribute">Attribute Selectors</h2>
+
+<p>Attribute selectors help select elements based on the existence and the value of
+their attributes. The common syntax for using the attribute selectors is to write
+the attribute name and its value inside of the square brackets([ ]), connecting
+the attribute name and its value by the equals sign(=). The attribute selectors
+that provide a sign(|, ^, $, *, ~) before the equal sign, select the elements with
+attibutes that fix a regular expression.</p>
+
+<p>For a complete reference of all the jQuery attribute selectors, please visit
+<a href="./selector_reference.html#attribute">jQuery Selectors Reference</a>.</p>
+
+<h3>The Has Attribute Selector [attribute]</h3>
+
+<p>Selects all elements that have specific attribute.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all elements that have a type attribute.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"[type]"</span><span class="p">)</span>
+</code></pre></div>
+<h3>The Attribute Equals Selector [attribute=value]</h3>
+
+<p>Selects all elements that have specific attribute with specific value.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all elements that have a type attribute with value "text".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"[type='text']"</span><span class="p">)</span>
+</code></pre></div>
+<h3>The Attribute Starts With Selector [attribute^=value]</h3>
+
+<p>Selects all elements that have the specific attribute with a value starting with the specific value.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all elements that have a title attribute whose value is starting with "Hi".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"[title^='Hi']"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="300" data-theme-id="0" data-slug-hash="JBogeP" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Attribute Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/JBogeP/">jQuery  Attribute Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="child">Child Selectors</h2>
+
+<p>Child selectors help select the children of an element based on their index or type.
+These selectors use one-based indexing which means the index starts at 1.</p>
+
+<p>For a complete reference of all the jQuery child selectors, please visit
+<a href="./selector_reference.html#child">jQuery Selectors Reference</a>.</p>
+
+<h3>:first-child</h3>
+
+<p>Selects all elements that are the first child of their parent.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that are the first child of their parent</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p:first-child"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:first-of-type</h3>
+
+<p>Selects all elements that are the first child of a specific type of their parent.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that are the first &lt;p&gt; element of their parent</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p:first-of-type"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:nth-last-child(n)</h3>
+
+<p>Selects all elements that are the nth-child of their parent, counting from the
+last element(index = 1) to the first. The parameter can be an integer greater than
+or equal to 1, the strings even and odd, or an equation like 3n.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that are the last child of their parent</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p:nth-last-child(1)"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="470" data-theme-id="0" data-slug-hash="MBwgoM" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Child Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/MBwgoM/">jQuery Child Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="content">Content Selectors</h2>
+
+<p>Content selectors help select elements based on their contents.</p>
+
+<h3>:contains(text)</h3>
+
+<p>Selects all elements that contain specific text.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that contain "hello"</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p:contains(hello)"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:has(selector)</h3>
+
+<p>Selects elements which contain the element(s) that matches the specific selector.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;div&gt; elements that have &lt;p&gt; element(s) inside of them</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div:has(p)"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:empty</h3>
+
+<p>Selects all elements that have no children(including text).</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all empty &lt;td&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"td:empty"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:parent</h3>
+
+<p>Selects all elements that are the parent of another element(including text).</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;button&gt; elements that are the parent of another element.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"button:parent"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="xJGKQg" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Content Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/xJGKQg/">jQuery  Content Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="form">Form Selectors</h2>
+
+<p>Form selectors help select form elements based on their types and status(e.g. checked,
+selected, disabled, enabled, focus). They shorten the code to select form elements.
+For example, instead of using $(&quot;button, input[type=&#39;button&#39;]&quot;), you can use
+$(&quot;:button&quot;) to select all button elements and elements of type button. The
+$(&quot;:enabled&quot;) and $(&quot;disabled&quot;) selectors can only be used on elements that support
+disabled attribute; which includes &lt;button&gt;, &lt;fieldset&gt;, &lt;input&gt;, &lt;select&gt;,
+&lt;optgroup&gt;, &lt;option&gt;, &lt;textare&gt;.</p>
+
+<p>For a complete reference of all the jQuery form selectors, please visit
+<a href="./selector_reference.html#form">jQuery Selectors Reference</a>.</p>
+
+<h3>:button</h3>
+
+<p>Selects all button elements and elements of type button.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all input elements of type button whose class is "class-name".</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">".class-name:button"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:checked</h3>
+
+<p>Selects all checkboxes, radio buttons and options of select elements that are
+checked or selected. It you just want to select options of select elements,
+use :selected instead.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all elements with class "class-name" that are checked</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">".class-name:checked"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:focus</h3>
+
+<p>Selects elements that are currently focused.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects the &lt;input&gt; element that is currently focused.</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"input:focus"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="300" data-theme-id="0" data-slug-hash="MBwWey" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Form Selectors" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/MBwWey/">jQuery  Form Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="hierarchy">Hierarchy Selectors</h2>
+
+<p>Hierarchy selectors help select elements based on the hierarchy in the DOM tree.
+An ancestor is a parent, grandparent, etc. A descendant is a child, grandchild,
+etc. Detailed explaination of hierarchy can be found in
+<a href="./traversal.html">jQuery Traversing</a> under Ancestors, Descendants and Siblings sections.</p>
+
+<h3>Descendant selector (&quot;ancestor descendant&quot;)</h3>
+
+<p>Selects all descendant elements of a specific ancestor.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that are descendants of &lt;div&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div p"</span><span class="p">)</span>
+</code></pre></div>
+<h3>Child selector (&quot;parent &gt; child&quot;)</h3>
+
+<p>Selects all direct child elements specified by &quot;child&quot; of elements specified by &quot;parent&quot;.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;button&gt; elements that are children of &lt;div&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div &gt; button"</span><span class="p">)</span>
+</code></pre></div>
+<h3>Next adjacent selector (&quot;prev + next&quot;)</h3>
+
+<p>Selects all first &quot;next&quot; elements that follow right after the &quot;prev&quot; element.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;button&gt; elements that are the immediately following siblings of each &lt;p&gt; element</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"p + button"</span><span class="p">)</span>
+</code></pre></div>
+<h3>Next Siblings selector (&quot;prev ~ siblings&quot;)</h3>
+
+<p>Selects all &quot;siblings&quot; elements that follow after the &quot;prev&quot; element</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all &lt;p&gt; elements that are the following siblings of &lt;button&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"button ~ p"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="oMXgLR" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery  Hierarchy" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/oMXgLR/">jQuery  Hierarchy</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="visibility">Visibility Selectors</h2>
+
+<p>Visibility selectors help select elements based on their visibility. An element
+is considered hidden if its display property is set to none, its width and
+height are set to zero, any of its ancestors is hidden, or it is a form element
+with type attribute set to &quot;hidden&quot;. Elements with their opacity set to 0 or
+visibility set to hidden are still considered visible.</p>
+
+<h3>:visible</h3>
+
+<p>Selects all elements that are visible.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all visible &lt;div&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div:visible"</span><span class="p">)</span>
+</code></pre></div>
+<h3>:hidden</h3>
+
+<p>Selects all elements that are hidden.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//Selects all hidden &lt;div&gt; elements</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">"div:hidden"</span><span class="p">)</span>
+</code></pre></div>
+<p data-height="350" data-theme-id="0" data-slug-hash="RBPNOo" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Visibility Selectors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/RBPNOo/">jQuery Visibility Selectors</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p><a class="previous" href="./index.html"><span>   Previous</span></a>
+<a class="next" href="./traversal.html"><span>Next  </span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

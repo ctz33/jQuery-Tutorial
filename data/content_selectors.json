@@ -1,0 +1,26 @@
+[
+  {
+    "selector": "$(\":contains(text)\")",
+    "description": "Selects all elements that contain specific text.",
+    "example": "$(\"p:contains(hello)\")",
+    "selects": "All &lt;p&gt; elements that contain \"hello\""
+  },
+  {
+    "selector": "$(\":has(selector)\")",
+    "description": "Selects elements which contain the element(s) that matches the specific selector.",
+    "example": "$(\"div:has(p)\")",
+    "selects": "All &lt;div&gt; elements that have &lt;p&gt; element(s) inside of them"
+  },
+  {
+    "selector": "$(\":empty\")",
+    "description": "Selects all elements that have no children (including text).",
+    "example": "$(\"td:empty\")",
+    "selects": "All empty &lt;td&gt; elements"
+  },
+  {
+    "selector": "$(\":parent)\"",
+    "description": "Selects all elements that are the parent of another element (including text).",
+    "example": "$(\"button:parent\")",
+    "selects": "All &lt;button&gt; elements that are the parent of another element"
+  }
+]

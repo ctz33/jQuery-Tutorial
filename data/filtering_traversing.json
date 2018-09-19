@@ -1,0 +1,50 @@
+[
+  {
+    "method": ".eq(index)",
+    "description": "Gets the element with specific index among the selected elements.",
+    "example": "$(\"li\").eq(1)",
+    "returns": "The second &lt;li&gt; element in the document"
+  },
+  {
+    "method": ".first()",
+    "description": "Gets the first element of the selected elements.",
+    "example": "$(\"li\").first()",
+    "returns": "The first &lt;li&gt; element in the document"
+  },
+  {
+    "method": ".last()",
+    "description": "Gets the last element of the selected elements.",
+    "example": "$(\"li\").last()",
+    "returns": "The last &lt;li&gt; element in the document"
+  },
+  {
+    "method": ".filter(selector/function(index))",
+    "description": "Gets the elements that matches the selector or pass the function’s test.",
+    "example": "$(\"p\").filter(\".test\")",
+    "returns": "All &lt;p&gt; elements that have a class \"test\"."
+  },
+  {
+    "method": ".has(selector)",
+    "description": "Gets all elements that have the selector inside of them.",
+    "example": "$(\"p\").has(\"button\")",
+    "returns": "All &lt;p&gt; elements that have button elements inside of them"
+  },
+  {
+    "method": ".is(selector)",
+    "description": "Checks if the currently selected element matches the selector.",
+    "example": "$(\"p#test\").parent().is(\"div\")",
+    "returns": "True if the parent of the &lt;p&gt; element with id \"test\" iis a &lt;div&gt; element; otherwise, false"
+  },
+  {
+    "method": ".not(selector)",
+    "description": "Gets all elements inside of the selected elements that do not match the selector.",
+    "example": "$(\"p\").not(\".test\")",
+    "returns": "All &lt;p&gt; elements that do not have a class \"test\""
+  },
+  {
+    "method": ".slice(start [,end])",
+    "description": "Gets a subset of currently selected elements starting with a index number. If the end index is specific, the selection ends with the index (exclusive).",
+    "example": "$(\"li\").slice(0, 2)",
+    "returns": "The first two &lt;li&gt; elements in the document"
+  }
+]

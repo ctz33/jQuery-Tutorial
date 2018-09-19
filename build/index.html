@@ -1,0 +1,423 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Overview</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section active">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <h1 id="intro">Overview & Introduction</h1>
+
+<p>jQuery is a feature-rich library written in Javascript which makes JavaScript development faster and easier. jQuery has no assumptions about the web technology stack and works well with other javascript frameworks like Angular, Backbone, and Ember.</p>
+
+<p>jQuery was originally released in January 2006 by John Resig. As of June 2018, jQuery is used on 73% of the top 1 million websites, and by 22.4% of all websites according to <a href="https://trends.builtwith.com/javascript/jQuery">BuiltWith</a>.</p>
+
+<h2>Embed jQuery library in your code</h2>
+
+<h3>Method 1</h3>
+
+<p>Download the jQuery library from <a href="http://jquery.com/download/">jQuery.com</a> if you want to customize the source code or run your application offline.</p>
+
+<ul>
+<li><p>To download the production version,which has been minified and compressed, for your live website:
+<a href="https://code.jquery.com/jquery-3.3.1.min.js">Download the compressed, production jQuery 3.3.1</a></p></li>
+<li><p>To download the development version, which is uncompressed and readable code, for your website under testing and development:
+<a href="https://code.jquery.com/jquery-3.3.1.js">Download the uncompressed, development jQuery 3.3.1</a></p></li>
+</ul>
+
+<p><em>Tip: Run <code>curl href &gt; your/file/location.name</code>  on terminal.</em>
+<em>For example, to download the development version to current folder:</em></p>
+<div class="highlight"><pre class="syntax-highlight plaintext"><code>curl https://code.jquery.com/jquery-3.3.1.min.js &gt; ./jquery-3.3.1.min.js
+</code></pre></div>
+<p>After downloading, include the jQuery library in an html file:</p>
+<div class="highlight"><pre class="syntax-highlight html"><code><span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery-3.3.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div>
+<h3>Method2</h3>
+
+<p>The fastest way to include jQuery in an html file is by using a CDN. CDN stands for <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Network</a>; which provides media files with very low latency to web broswers.
+The browser will cache the file for reuse. For popular web libraries like jQuery, the browser will often reuse cached library files instead of downloading the same file again for each site.</p>
+<div class="highlight"><pre class="syntax-highlight html"><code>    <span class="c">&lt;!-- Google CDN: --&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="c">&lt;!-- or use Microsoft CDN: --&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+</code></pre></div>
+<h2>Prerequisites</h2>
+
+<p>You need basic knowledge of CSS, HTML and Javascript. Although jQuery is succinct and easy to use, it has no real structure and developers have full freedom. The lack of understanding basic CSS, HTML and Javascript will lead to
+  &quot;spaghetti code&quot;.</p>
+
+<h2 id="reason">Reasons to use jQuery</h2>
+
+<p>The advantages of using javascript libraries and frameworks include:</p>
+
+<ul>
+<li><p>Libraries like jQuery are the most robust way to deal with browser incompatibilities during cross-browser development. It&#39;s annoying to adjust code to support all browsers and debugging the imcompability issues can take forever. One classic example is different event models for browsers:</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//For FF, Webkit, IE9+ browsers</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">()</span>
+  <span class="c1">//For IE5-8 browsers</span>
+  <span class="nx">e</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">()</span>
+</code></pre></div>
+<p>jQuery did a lot of work to solve browser incompatibilities and gotchas developers often come across.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="c1">//jQuery Source Code of $(document).ready(function () {//do work});</span>
+    <span class="kd">function</span> <span class="nx">bindReady</span><span class="p">(){</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="nx">readyBound</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+      <span class="nx">readyBound</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+      <span class="c1">// Mozilla, Opera and webkit nightlies currently support this event</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span> <span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Use the handy event callback</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+              <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span> <span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">,</span> <span class="kc">false</span> <span class="p">);</span>
+              <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span><span class="p">();</span>
+          <span class="p">},</span> <span class="kc">false</span> <span class="p">);</span>
+
+      <span class="c1">// If IE event model is used</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">attachEvent</span> <span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// ensure firing before onload,</span>
+          <span class="c1">// maybe late but safe also for iframes</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="s2">"onreadystatechange"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+              <span class="k">if</span> <span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s2">"complete"</span> <span class="p">)</span> <span class="p">{</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">detachEvent</span><span class="p">(</span> <span class="s2">"onreadystatechange"</span><span class="p">,</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span> <span class="p">);</span>
+                  <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span><span class="p">();</span>
+              <span class="p">}</span>
+          <span class="p">});</span>
+
+          <span class="c1">// If IE and not an iframe</span>
+          <span class="c1">// continually check to see if the document is ready</span>
+          <span class="k">if</span> <span class="p">(</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">doScroll</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span> <span class="o">==</span> <span class="nb">window</span><span class="p">.</span><span class="nx">top</span> <span class="p">)</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+              <span class="k">if</span> <span class="p">(</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">isReady</span> <span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+              <span class="k">try</span> <span class="p">{</span>
+                  <span class="c1">// If IE is used, use the trick by Diego Perini</span>
+                  <span class="c1">// http://javascript.nwbox.com/IEContentLoaded/</span>
+                  <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">doScroll</span><span class="p">(</span><span class="s2">"left"</span><span class="p">);</span>
+              <span class="p">}</span> <span class="k">catch</span><span class="p">(</span> <span class="nx">error</span> <span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">setTimeout</span><span class="p">(</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+                  <span class="k">return</span><span class="p">;</span>
+              <span class="p">}</span>
+
+              <span class="c1">// and execute any waiting functions</span>
+              <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span><span class="p">();</span>
+          <span class="p">})();</span>
+      <span class="p">}</span>
+
+      <span class="c1">// A fallback to window.onload, that will always work</span>
+      <span class="nx">jQuery</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nb">window</span><span class="p">,</span> <span class="s2">"load"</span><span class="p">,</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">ready</span> <span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></li>
+<li><p>jQuery provides easier syntax to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>  <span class="c1">//jQuery uses one line code to check if the site is loaded</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//do work</span>
+  <span class="p">});</span>
+
+  <span class="c1">//Can JavaScript do the same thingin one line?</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//won't work if event handler is added after the page loaded</span>
+    <span class="c1">//won't work for IE&lt;= 8</span>
+  <span class="p">});</span>
+
+  <span class="c1">//This is the minimum amount of JavaScript code</span>
+  <span class="c1">//(taken from https://plainjs.com/javascript/events/running-code-when-the-document-is-ready-15/)</span>
+  <span class="kd">function</span> <span class="nx">ready</span><span class="p">(</span><span class="nx">callback</span><span class="p">){</span>
+      <span class="c1">// in case the document is already rendered()</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="o">!=</span><span class="s1">'loading'</span><span class="p">)</span> <span class="nx">callback</span><span class="p">();</span>
+      <span class="c1">// modern browsers</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">)</span> <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+      <span class="c1">// IE &lt;= 8</span>
+      <span class="k">else</span> <span class="nb">document</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="s1">'onreadystatechange'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span><span class="o">==</span><span class="s1">'complete'</span><span class="p">)</span> <span class="nx">callback</span><span class="p">();</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">//do work after writing a long function to test whether document is ready</span>
+  <span class="p">});</span>
+
+</code></pre></div>
+<p><a class="next" href="./selectors.html"><span>Next  </span></a></p></li>
+</ul>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

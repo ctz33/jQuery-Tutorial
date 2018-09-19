@@ -1,0 +1,565 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Manipulation</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section active">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Created by Channing Jacobs -->
+
+<h1>jQuery Manipulation</h1>
+
+<p>jQuery provides methods to access, update, add, and remove DOM elements and attributes on a web page. Recall, a set of one or more objects may be selected by direct selection: “$(selector)” or through traversal: “$(selector).jQuery_traversal_method()”.</p>
+
+<p>jQuery manipulation methods can be split into two categories. The first is HTML manipulation. These methods interact with elements and their content. The second is CSS manipulation. These methods interact with the style attribute of elements.</p>
+
+<p><span id="HTML_M"></span></p>
+
+<h2>HTML Manipulation</h2>
+
+<p>Once you have selected a set of one or more objects, you may interact with their content. The content may be plain text, html data, or element attributes. The most common operations are accessing and updating content.</p>
+
+<h3>Accessing and Updating:</h3>
+
+<p>There are four methods to access and update web page content. The .text() method is used to get or replace text. The .html() method gets or replaces html. The .val() method gets or replaces form text data. Finally, the .attr() method gets or replaces elements’ attributes. Each method and its use cases is listed below.</p>
+
+<h4>Text</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">text</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">new_text</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">old_text</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>The .text() method returns the combined text contents of each selected element and their descendants in a string.</li>
+<li>When .text() is provided with new_text, the text of each selected element is updated to new_text. new_text may be a string, boolean, or number (booleans and numbers are converted to a string representation by default).</li>
+<li>If the user supplies a function, it will receive the index of the element from the selected set of elements and the old_text value. The function must return a string.</li>
+</ul>
+
+<p><strong>Notes:</strong> The .text() method may be used on XML and HTML documents. Whitespace may vary due to HTML parser used by each browser. The value of form elements can’t be set or accessed with .text(); use .val() for these elements. This method escapes the provided string (by calling .createTextNode()) to avoid rendering errors. For example, &lt;div&gt; is transformed into &amp;lt;div&amp;gt;”.</p>
+
+<p><strong>Example:</strong>
+  <p data-height="265" data-theme-id="0" data-slug-hash="BPNbzM" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="BPNbzM" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/BPNbzM/">BPNbzM</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>HTML</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">new_html</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">old_html</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>The .html() method returns the html contents of the first element in the set of selected elements.</li>
+<li>Each selected element will replace its html content with the provided valid html string new_html.</li>
+<li>A user defined function may be passed if it returns a valid html string. See .text() for more detail.</li>
+</ul>
+
+<p><strong>Notes:</strong> The .html() method can’t be called on XML documents. The browser’s innerHTML property is used to retrieve html content. This means that formatting of the HTML may differ from the original document.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="pZJBad" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".html()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/pZJBad/">.html()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Values</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">val</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">new_value</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span><span class="nx">value</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>The .val() method returns the value of form elements. Examples of form elements include: input, select, textarea, and checkboxes.</li>
+<li>The user may provide a new<em>value to replace in form elements. The new</em>value may be a string, number, or array of strings (one string is used for each selected element).</li>
+<li>A user function may be passed if it returns a valid value string. See .text() for more detail.</li>
+</ul>
+
+<p><strong>Notes:</strong> A select element with multiple attribute will return an array of values for each selected option when .val() is called. The .val() method will return undefined if called on an empty collection.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="oMXVNe" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="oMXVNe" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/oMXVNe/">oMXVNe</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Attributes</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">attr_name</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">attr_name</span><span class="p">,</span> <span class="nx">new_value</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">attr_name</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">old_value</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>The .attr() method returns the attribute matching the attr_name for the first element in the set of selected elements. It will return undefined for attributes that have not been set.</li>
+<li>The user may provide a new<em>value to replace the value of the attribute attr</em>name. The new_value may be a string, number, or null (to remove the attribute).</li>
+<li>A user function may be passed if it returns a valid value string. See .text() for more detail.</li>
+</ul>
+
+<p><strong>Notes:</strong> To loop through attributes of multiple selected elements, use javascript .forEach or .map (or jQuery .each and .map). If new_string is empty, the attribute is removed.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="VBvVgd" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".attr()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/VBvVgd/">.attr()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h3>Adding:</h3>
+
+<p>The previous methods were used to retrieve and update existing content. The following methods are used to add new content to a web page.</p>
+
+<h4>Inserting</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">new_content</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">prepend</span><span class="p">(</span><span class="nx">new_content</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="nx">new_content</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">before</span><span class="p">(</span><span class="nx">new_content</span><span class="p">)</span>
+</code></pre></div>
+<p>The four methods above allow for content to be added to four locations on a web page.</p>
+
+<ul>
+<li>The .append() method inserts new_content at the start of the selected element(s).</li>
+<li>The .prepend() method inserts new_content at the end of of the selected element(s).</li>
+<li>The .after() method inserts new_content after the seleted element(s).</li>
+<li>The .before() method inserts new_content before the selected element(s).</li>
+</ul>
+
+<p>The new_content variable must be an html string, element, text, array of elements, or jQuery object.</p>
+
+<p>Each of these methods also has a variant.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">(</span><span class="nx">new_content</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+    <span class="p">(</span><span class="nx">new_content</span><span class="p">).</span><span class="nx">prependTo</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+    <span class="p">(</span><span class="nx">new_content</span><span class="p">).</span><span class="nx">after</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+    <span class="p">(</span><span class="nx">new_content</span><span class="p">).</span><span class="nx">before</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+</code></pre></div>
+<p>These methods run identically to the above methods. The difference is that the new_content is the distinguished parameter, while the selected set of elements (target) is now the argument.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="jpbQjb" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="Adding" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/jpbQjb/">Adding</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Wrapping</h4>
+
+<p>Another way to add content is by wrapping it around an existing html structure. This is done by calling .wrap().</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">wrap</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The .wrap() method encloses the selected elements with the provided wrapper.</li>
+</ul>
+
+<p>This method is commonly used for bundling sections of a web page within div tags. Then, all elements may be manipulated by styling their div container. This process may also be viewed as parent replacement (the old parent becomes an ancestor). An example is provided in the unwrap section.</p>
+
+<h3>Removing</h3>
+
+<p>Removing content from a web page is simple in jQuery. There are three common content removal patterns: deleting, toggling, and unwrapping.</p>
+
+<h4>Deleting</h4>
+
+<p>Direct deletion occurs on elements or attributes.</p>
+
+<h5>Elements</h5>
+
+<p>Two of the following methods have an optional filter variable. The filter is a selector that limits the scope of deletion. The filter variable eliminates a verbose initial selector; especially when class names are involved.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">filter</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">detach</span><span class="p">(</span><span class="nx">filter</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">empty</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>The .remove() and .detach() methods remove the selected elements and their descendants (including text) from the DOM.</li>
+<li>The .empty() method removes all descendants (including text) from the selected elements.</li>
+</ul>
+
+<p>Unlike .remove(), .detach() does not delete bound events and jQuery data associated with the removed elements. The .detach() method returns the object(s) that were deleted. The user should use .detach() when an element will be added back to the page at a later time. The .remove() method should be used for permanent removal.</p>
+
+<p>The .empty() method can be used to clear out content from a container such as a paragraph or div. Then, new content can be injected using an add method from the previous subsection.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="KBVppZ" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="Deleting Elements" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/KBVppZ/">Deleting Elements</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h5>Attributes</h5>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="nx">attr_names</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The .removeAttr() method removes the  attributes of an element using attr_names.</li>
+</ul>
+
+<p>The attr_names variable is a string of space-separated attribute names.</p>
+
+<p>This method uses the JavaScript .removeAttribute() method, but has two improvements. It can be called on jQuery objets and it handles attribute name differences across browsers.</p>
+
+<h4>Toggling</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">toggle</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The .toggle() method changes the visibility of the selected elements.</li>
+</ul>
+
+<p>Toggle is commonly used with <a href="./Event-and-Animation.html">event handlers</a> such as .click(). Without any parameters it simply changes the display property of selceted content. This method may also take options such as duration in seconds and callback functions for success or failure. The complete API is <a href="https://api.jquery.com/toggle/">here</a>.</p>
+
+<h4>Unwrapping</h4>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">unwrap</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">unwrap</span><span class="p">(</span><span class="nx">filter</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The .unwrap() method removes the parent element of the selected element from the DOM. The parent element is returned.</li>
+</ul>
+
+<p>The .unwrap() and .wrap() methods may be paired to change the styling of a data container.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="JBYwXv" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".wrap()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/JBYwXv/">.wrap()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<p><span id="CSS_M"></span></p>
+
+<h2>CSS Manipulation</h2>
+
+<p>jQuery allows the user to change the styling of content by interacting directly with its class attribute, style attribute, and dimensions.</p>
+
+<h3>Classes</h3>
+
+<p>Before interacting with any element&#39;s class, the user should check that the element is a member of that class. This check may seem trivial, but it is important since other jQuery code may change class membership.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="nx">class_name</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The .hasClasS() method returns a boolean if the selected elements have the class class_name.</li>
+</ul>
+
+<p>The class_name variable should be a single class name as a string.</p>
+
+<p>Once the user calls .hasClass(), then the following methods may be called to get/update, add, or remove a class.</p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">class_names</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">removeClass</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="nx">class_names</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="nx">class_names</span><span class="p">)</span>
+</code></pre></div>
+<p>The class_names variable is a string of space-separated classes.</p>
+
+<ul>
+<li>The .addClass() method adds one or more classes to the selected elements.</li>
+<li>The .removeClass() method removes all classes from the selected elements. If class_names is provided, then only matched classes will be removed.</li>
+<li>The .toggleClass(class<em>names) method enables or disables all classes specified by class</em>names.</li>
+</ul>
+
+<p><strong>Note:</strong> The .addClass() method does not replace existing classes. Instead, it appends a class to the elements selected. Therefore, the user must be careful of duplicating classes.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="pZjxeZ" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".class()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/pZjxeZ/">.class()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h3>Style Attribute</h3>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">property_name</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">property_names</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">property_name</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">property_object</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">property_name</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">old_value</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>The .css() method will return the value of a css property if provided a valid property_name.</li>
+<li>If provided an array of property_names, each property will be returned in an object. Use the jQuery.each() method to access the data. See the example for iteration through the object.</li>
+<li>The user may provide property_name and value strings to set each selected elements&#39; property to that value.</li>
+<li>The .css() method can take a property object. This allows for multiple properties to be set at once. The property_object has the same syntax as a JavaScript object, but contains property:value key pairs.</li>
+<li>The .css() method can be provided a function to update the property<em>name. The function must return a string or number based on the css property requirement. The function may be used when setting up a property</em>object (see example).</li>
+</ul>
+
+<p><strong>Notes:</strong> The .css() method only returns the properties of the first element selected, but can set the properties of all selected elements. The .ccs() method interacts with inline css only.</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="qybdjW" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".css()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/qybdjW/">.css()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h3>Dimensions</h3>
+
+<p>jQuery provides methods to interact with the css box model. The traditional box model is shown below with mappings to each jQuery method.</p>
+
+<p><br>
+<img src="./images/img_jquerydim.gif" alt="jQuery Dimensions Picture" "Simplified Dimension Layout"/>
+<br></p>
+<div class="highlight"><pre class="syntax-highlight javascript"><code>    <span class="p">.</span><span class="nx">width</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">height</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">innerWidth</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">innerHeight</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">outerWidth</span><span class="p">(</span><span class="kr">boolean</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">outerHeight</span><span class="p">(</span><span class="kr">boolean</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Each method can be used to return the unitless size of its corresponding box model property (if no parameters are passed).</li>
+<li>Each method can be supplied a string or number (or function with a string or number return value) to set the size of the box model property.</li>
+<li>The .outer methods control the border and inner content size by default (false boolean) and margin and inner content size with a true boolean.</li>
+</ul>
+
+<p><strong>Notes:</strong> These methods should only be called on visible elements. Otherwise, returned values may not be accurate. The size of content from .width() will be accurate, regardless of the box-sizing css property. These properties differ from .css() in return value. For example, .width() returns a unitless pixel value, but .css(width) would return a value with units (such as 400px).</p>
+
+<p><strong>Example:</strong>
+<p data-height="265" data-theme-id="0" data-slug-hash="oMjaVz" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title=".boxsizes()" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/oMjaVz/">.boxsizes()</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<p><a class="previous" href="./traversal.html"><span>   Previous</span></a>
+<a class="next" href="./Event-and-Animation.html"><span>Next  </span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

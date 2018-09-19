@@ -1,0 +1,56 @@
+[
+  {
+    "selector": "$(\"[attribute]\")",
+    "description": "Selects all elements that have the specific attribute.",
+    "example": "$(\"[type]\")",
+    "selects": "All elements that have a type attribute"
+  },
+  {
+    "selector": "$(\"[attribute=value]\")",
+    "description": "Selects all elements that have the specific attribute with the specific value.",
+    "example": "$(\"[type='text']\")",
+    "selects": "All elements that have a type attribute with value \"text\""
+  },
+  {
+    "selector": "$(\"[attribute!=value]\")",
+    "description": "Selects all elements that either do not have the specific attribute or have the specific attribute whose value is not equal to the specific value.",
+    "example": "$(\"[type!='text']\")",
+    "selects": "All elements that either do not have a type attribute or have a type attribute whose value is not equal to \"text\""
+  },
+  {
+    "selector": "$(\"[attribute|=value]\")",
+    "description": "Selects elements that have the specific attribute with a value either equal to the specific value or starting with the specific value followed by a hyphen (-).",
+    "example": "$(\"[title|='Hello']\")",
+    "selects": "All elements that have a title attribute whose value is either equal to \"Hello\" or starting with \"Hello\" followed by a hyphen"
+  },
+  {
+    "selector": "$(\"[attribute^=value]\")",
+    "description": "Selects elements that have the specific attribute with a value starting with the specific value.",
+    "example": "$(\"[title^='Hi']\")",
+    "selects": "All elements that have a title attribute whose value is starting with \"Hi\""
+  },
+  {
+    "selector": "$(\"[attribute$=value]\")",
+    "description": "Selects elements that have the specific attribute with a value ending with the specific value.",
+    "example": "$(\"[title$='bye']\")",
+    "selects": "All elements that have a title attribute whose value is ending with \"bye\""
+  },
+  {
+    "selector": "$(\"[attribute*=value]\")",
+    "description": "Selects elements that have the specific attribute with a value containing the specific value as a substring.",
+    "example": "$(\"[title*='my']\")",
+    "selects": "All elements that have a title attribute whose value contains \"my\" as a substring"
+  },
+  {
+    "selector": "$(\"[attribute~=value]\")",
+    "description": "Selects elements that have the specific attribute with a value containing the specific value as a word.",
+    "example": "$(\"[title~='my']\")",
+    "selects": "All elements that have a title attribute whose value contains the word \"my\""
+  },
+  {
+    "selector": "$(\"[attribute1=value1][attribute2=value2][attributeN=valueN]\")",
+    "description": "Selects all elements that have all of the specific attributes with the specific values",
+    "example": "$(\"[type=\"text\"][placeholder=0]\")",
+    "selects": "All elements that have a type attribute with value \"text\" and a placeholder attribute with value 0"
+  }
+]

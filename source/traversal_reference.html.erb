@@ -1,0 +1,147 @@
+---
+title: jQuery Traversing Reference
+---
+<h1>jQuery Traversing Reference</h1>
+<div>
+  <h2 id="ancestors">Ancestors</h2>
+  <table id="ancestors-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.ancestors_traversing.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="descendants">Descendants</h2>
+  <table id="descendants-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.descendants_traversing.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="siblings">Siblings</h2>
+  <table id="siblings-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.siblings_traversing.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="filtering">Filtering</h2>
+  <table id="filtering-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.filtering_traversing.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="iteration">Iteration</h2>
+  <table id="iteration-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.iteration.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="other">Others</h2>
+  <table id="other-traversing" class="display">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Returns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.other_traversing.each do |selector| %>
+        <tr>
+          <td><%= selector["method"] %></td>
+          <td><%= selector["description"] %></td>
+          <td><%= selector["example"] %></td>
+          <td><%= selector["returns"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

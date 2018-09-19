@@ -1,0 +1,764 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Selectors Reference</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section ">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <h1>jQuery Selectors Reference</h1>
+<div>
+  <h2 id="basic">Basic Selectors</h2>
+  <table id="basic-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$("element")</td>
+          <td>Selects all elements with the specific tag name.</td>
+          <td>$("p")</td>
+          <td>All &lt;p&gt; elements in the document</td>
+        </tr>
+        <tr>
+          <td>$("#id")</td>
+          <td>Selects a single element with the specific id.</td>
+          <td>$("#test-id")</td>
+          <td>The single element that has an id "test-id"</td>
+        </tr>
+        <tr>
+          <td>$(".class")</td>
+          <td>Selects all elements with the specific class.</td>
+          <td>$(".test-class")</td>
+          <td>All elements that have a class "test-class"</td>
+        </tr>
+        <tr>
+          <td>$("*")</td>
+          <td>Selects all elements.</td>
+          <td>$("*")</td>
+          <td>All elements</td>
+        </tr>
+        <tr>
+          <td>$("selector 1, selector 2, selector N")</td>
+          <td>Selects elements that match any one of the selectors.</td>
+          <td>$(".test-class, #test-id")</td>
+          <td>Elements that have a class "test-class" or have an id "test-id"</td>
+        </tr>
+        <tr>
+          <td>$(":even")</td>
+          <td>Selects elements with even indices (index starts with 0).</td>
+          <td>$("li:even")</td>
+          <td>Even &lt;li&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$(":odd")</td>
+          <td>Selects elements with odd indices (index starts with 0).</td>
+          <td>$("li:odd")</td>
+          <td>Odd &lt;li&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$(":root")</td>
+          <td>Selects the root element of the document. The root element of HTML is always the &lt;html&gt; element.</td>
+          <td>$(":root")</td>
+          <td>The root element of the document.</td>
+        </tr>
+        <tr>
+          <td>$(":first")</td>
+          <td>Selects the first element.</td>
+          <td>$("li:first")</td>
+          <td>The first &lt;li&gt; element</td>
+        </tr>
+        <tr>
+          <td>$(":last")</td>
+          <td>Selects the last element</td>
+          <td>$("li:last") </td>
+          <td>The last &lt;li&gt; element</td>
+        </tr>
+        <tr>
+          <td>$(":eq(index)")</td>
+          <td>Selects the element with the specific index (index starts with 0).</td>
+          <td>$("p:eq(0)")</td>
+          <td>The first &lt;p&gt; element</td>
+        </tr>
+        <tr>
+          <td>$(":gt(index)")</td>
+          <td>Selects all elements at indices that are greater than the specific index (index starts with 0).</td>
+          <td>$("p:gt(4)")</td>
+          <td>All &lt;p&gt; elements that have indices greater than 4</td>
+        </tr>
+        <tr>
+          <td>$(":lt(index)")</td>
+          <td>Selects all elements at indices that are less than the specific index (index starts with 0).</td>
+          <td>$("p:lt(4)")</td>
+          <td>All &lt;p&gt; elements that have indices less than 4</td>
+        </tr>
+        <tr>
+          <td>$(":not(selector)")</td>
+          <td>Selects all elements that do not match the specific selector.</td>
+          <td>$("p:not(.test-class)")</td>
+          <td>All &lt;p&gt; elements that do not have a class "test-class"</td>
+        </tr>
+        <tr>
+          <td>$(":header")</td>
+          <td>Selects all header elements, i.e. &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, etc.</td>
+          <td>$(":header")</td>
+          <td>All header elements</td>
+        </tr>
+        <tr>
+          <td>$(":animated")</td>
+          <td>Selects all elements that are currently animated.</td>
+          <td>$(".changed:animated")</td>
+          <td>All elements with class "changed" that are currently animated</td>
+        </tr>
+        <tr>
+          <td>$(":lang(language)")</td>
+          <td>Selects all elements with the language attribute starting with the specific value.</td>
+          <td>$("p:lang(en)")</td>
+          <td>All &lt;p&gt; elements that have a language attribute whose value starts with "en"</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="attribute">Attribute Selectors</h2>
+  <table id="attribute-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$("[attribute]")</td>
+          <td>Selects all elements that have the specific attribute.</td>
+          <td>$("[type]")</td>
+          <td>All elements that have a type attribute</td>
+        </tr>
+        <tr>
+          <td>$("[attribute=value]")</td>
+          <td>Selects all elements that have the specific attribute with the specific value.</td>
+          <td>$("[type='text']")</td>
+          <td>All elements that have a type attribute with value "text"</td>
+        </tr>
+        <tr>
+          <td>$("[attribute!=value]")</td>
+          <td>Selects all elements that either do not have the specific attribute or have the specific attribute whose value is not equal to the specific value.</td>
+          <td>$("[type!='text']")</td>
+          <td>All elements that either do not have a type attribute or have a type attribute whose value is not equal to "text"</td>
+        </tr>
+        <tr>
+          <td>$("[attribute|=value]")</td>
+          <td>Selects elements that have the specific attribute with a value either equal to the specific value or starting with the specific value followed by a hyphen (-).</td>
+          <td>$("[title|='Hello']")</td>
+          <td>All elements that have a title attribute whose value is either equal to "Hello" or starting with "Hello" followed by a hyphen</td>
+        </tr>
+        <tr>
+          <td>$("[attribute^=value]")</td>
+          <td>Selects elements that have the specific attribute with a value starting with the specific value.</td>
+          <td>$("[title^='Hi']")</td>
+          <td>All elements that have a title attribute whose value is starting with "Hi"</td>
+        </tr>
+        <tr>
+          <td>$("[attribute$=value]")</td>
+          <td>Selects elements that have the specific attribute with a value ending with the specific value.</td>
+          <td>$("[title$='bye']")</td>
+          <td>All elements that have a title attribute whose value is ending with "bye"</td>
+        </tr>
+        <tr>
+          <td>$("[attribute*=value]")</td>
+          <td>Selects elements that have the specific attribute with a value containing the specific value as a substring.</td>
+          <td>$("[title*='my']")</td>
+          <td>All elements that have a title attribute whose value contains "my" as a substring</td>
+        </tr>
+        <tr>
+          <td>$("[attribute~=value]")</td>
+          <td>Selects elements that have the specific attribute with a value containing the specific value as a word.</td>
+          <td>$("[title~='my']")</td>
+          <td>All elements that have a title attribute whose value contains the word "my"</td>
+        </tr>
+        <tr>
+          <td>$("[attribute1=value1][attribute2=value2][attributeN=valueN]")</td>
+          <td>Selects all elements that have all of the specific attributes with the specific values</td>
+          <td>$("[type="text"][placeholder=0]")</td>
+          <td>All elements that have a type attribute with value "text" and a placeholder attribute with value 0</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="child">Child Selectors</h2>
+  <table id="child-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$(":first-child")</td>
+          <td>Selects all elements that are the first child of their parent.</td>
+          <td>$("p:first-child")</td>
+          <td>All &lt;p&gt; elements that are the first child of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":last-child")</td>
+          <td>Selects all elements that are the last child of their parent.</td>
+          <td>$("p:last-child")</td>
+          <td>All &lt;p&gt; elements that are the last child of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":first-of-type")</td>
+          <td>Selects all elements that are the first child of a specific type of their parent.</td>
+          <td>$("p:first-of-type")</td>
+          <td>All &lt;p&gt; elements that are the first &lt;p&gt; element of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":last-of-type")</td>
+          <td>Selects all elements that are the last child of a specific type of their parent.</td>
+          <td>$("p:last-of-type")</td>
+          <td>All &lt;p&gt; elements that are the last &lt;p&gt; element of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":nth-child(n)")</td>
+          <td>Selects all elements that are the nth-child of their parent (index starts with 1). The parameter can be index, even, odd, or an equation.</td>
+          <td>$("p:nth-child(4)")</td>
+          <td>All &lt;p&gt; elements that are the 4th child of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":nth-last-child(n)")</td>
+          <td>Selects all elements that are the nth-child of their parent, counting from the last element(index = 1) to the first. The parameter can be index, even, odd, or an equation.</td>
+          <td>$("p:nth-last-child(1)")</td>
+          <td>All &lt;p&gt; elements that are the last child of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":nth-of-type(n)")</td>
+          <td>Selects all elements that are the nth child of a specific type of their parent (index starts with 1). The parameter can be index, even, odd, or an equation.</td>
+          <td>$("p:nth-of-type(4)")</td>
+          <td>All &lt;p&gt; elements that are the 4th &lt;p&gt; element of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":nth-last-of-type(n)")</td>
+          <td>Selects all elements that are the nth child of a specific type of their parent, counting from the last element(index = 1) to the first. The parameter can be index, even, odd, or an equation.</td>
+          <td>$("p:nth-last-of-type(1)")</td>
+          <td>All &lt;p&gt; elements that are the last &lt;p&gt; element of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":only-child")</td>
+          <td>Selects all elements that are the only child of their parent.</td>
+          <td>$("p:only-child")</td>
+          <td>All &lt;p&gt; elements that are the only child of their parent</td>
+        </tr>
+        <tr>
+          <td>$(":only-of-type")</td>
+          <td>Selects all elements that are the only child of a specific type of their parent.</td>
+          <td>$("p:only-of-type")</td>
+          <td>All &lt;p&gt; elements that are the only &lt;p&gt; element of their parent</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="content">Content Selectors</h2>
+  <table id="content-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$(":contains(text)")</td>
+          <td>Selects all elements that contain specific text.</td>
+          <td>$("p:contains(hello)")</td>
+          <td>All &lt;p&gt; elements that contain "hello"</td>
+        </tr>
+        <tr>
+          <td>$(":has(selector)")</td>
+          <td>Selects elements which contain the element(s) that matches the specific selector.</td>
+          <td>$("div:has(p)")</td>
+          <td>All &lt;div&gt; elements that have &lt;p&gt; element(s) inside of them</td>
+        </tr>
+        <tr>
+          <td>$(":empty")</td>
+          <td>Selects all elements that have no children (including text).</td>
+          <td>$("td:empty")</td>
+          <td>All empty &lt;td&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$(":parent)"</td>
+          <td>Selects all elements that are the parent of another element (including text).</td>
+          <td>$("button:parent")</td>
+          <td>All &lt;button&gt; elements that are the parent of another element</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="form">Form Selectors</h2>
+  <table id="form-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$(":button")</td>
+          <td>Selects all button elements and elements of type button.</td>
+          <td>$(".class-name:button")</td>
+          <td>all button elements and elements of type button whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":checkbox")</td>
+          <td>Selects all elements of type checkbox.</td>
+          <td>$(".class-name:checkbox")</td>
+          <td>All elements of type checkbox whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":file")</td>
+          <td>Selects all elements of type file.</td>
+          <td>$(".class-name:file")</td>
+          <td>All elements of type file whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":image")</td>
+          <td>Selects all elements of type image.</td>
+          <td>$(".class-name:image")</td>
+          <td>All elements of type image whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":input")</td>
+          <td>Selects all &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;buttons&gt; elements.</td>
+          <td>$(".class-name:input")</td>
+          <td>All &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;buttons&gt; elements whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":password")</td>
+          <td>Selects all elements of type password.</td>
+          <td>$(".class-name:password")</td>
+          <td>All elements of type password whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":radio")</td>
+          <td>Selects all elements of type radio.</td>
+          <td>$(".class-name:radio")</td>
+          <td>All elements of type radio whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":reset")</td>
+          <td>Selects all elements of type reset.</td>
+          <td>$(".class-name:reset")</td>
+          <td>All elements of type reset whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":submit")</td>
+          <td>Selects all elements of type submit.</td>
+          <td>$(".class-name:submit")</td>
+          <td>All elements of type submit whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":text")</td>
+          <td>Selects all &lt;input&gt; elements of type text.</td>
+          <td>$(".class-name:text")</td>
+          <td>All &lt;input&gt; elements of type text whose class is "class-name"</td>
+        </tr>
+        <tr>
+          <td>$(":selected")</td>
+          <td>Selects all options of select elements that are selected.</td>
+          <td>$(".class-name:selected")</td>
+          <td>All options of select elements with class "class-name" that are currently selected</td>
+        </tr>
+        <tr>
+          <td>$(":checked)</td>
+          <td>Selects all checkboxes, radio buttons and options of select elements that are checked or selected.</td>
+          <td>$(".class-name:checked")</td>
+          <td>All checkboxes, radio buttons and options of select elements with class "class-name" that are currently checked or selected</td>
+        </tr>
+        <tr>
+          <td>$(":disabled)</td>
+          <td>Selects all elements that are disabled.</td>
+          <td>$(".class-name:disabled")</td>
+          <td>All elements with class "class-name" that are disabled</td>
+        </tr>
+        <tr>
+          <td>$(":enabled)</td>
+          <td>Selects all elements that are enabled.</td>
+          <td>$(".class-name:enabled")</td>
+          <td>All elements with class "class-name" that are enabled</td>
+        </tr>
+        <tr>
+          <td>$(":focus)</td>
+          <td>Selects the element that is currently focused.</td>
+          <td>$(".class-name:focus")</td>
+          <td>The element with class "class-name" that is currently focused</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="hierarchy">Hierarchy</h2>
+  <table id="hierarchy-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$("ancestor descendant")</td>
+          <td>Selects all descendant elements of a specific ancestor.</td>
+          <td>$("div p")</td>
+          <td>All &lt;p&gt; elements that are descendants of &lt;div&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$("parent &gt; child")</td>
+          <td>Selects all child elements specified by "child" of elements specified by "parent".</td>
+          <td>$("div &gt; button")</td>
+          <td>All &lt;button&gt; elements that are children of &lt;div&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$("prev + next")</td>
+          <td>Selects all first "next" elements that follow right after the "prev" element.</td>
+          <td>$("p + button")</td>
+          <td>All &lt;button&gt; elements that are the immediately following siblings of each &lt;p&gt; element</td>
+        </tr>
+        <tr>
+          <td>$("prev ~ siblings")</td>
+          <td>Selects all "siblings" elements that are following siblings of the "prev" element.</td>
+          <td>$("button ~ p")</td>
+          <td>All &lt;p&gt; elements that are the following siblings of &lt;button&gt; elements</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h2 id="visibility">Visibility Selectors</h2>
+  <table id="visibility-selectors" class="display">
+    <thead>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Selects</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>$(":hidden")</td>
+          <td>Selects all elements that are hidden.</td>
+          <td>$("button:hidden")</td>
+          <td>All hidden &lt;button&gt; elements and button type &lt;input&gt; elements</td>
+        </tr>
+        <tr>
+          <td>$(":visible")</td>
+          <td>Selects all elements that are visible.</td>
+          <td>$("button:visible")</td>
+          <td>All visible &lt;button&gt; elements and button type &lt;input&gt; elements</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>

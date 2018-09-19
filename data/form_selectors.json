@@ -1,0 +1,92 @@
+[
+  {
+    "selector": "$(\":button\")",
+    "description": "Selects all button elements and elements of type button.",
+    "example": "$(\".class-name:button\")",
+    "selects": "all button elements and elements of type button whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":checkbox\")",
+    "description": "Selects all elements of type checkbox.",
+    "example": "$(\".class-name:checkbox\")",
+    "selects": "All elements of type checkbox whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":file\")",
+    "description": "Selects all elements of type file.",
+    "example": "$(\".class-name:file\")",
+    "selects": "All elements of type file whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":image\")",
+    "description": "Selects all elements of type image.",
+    "example": "$(\".class-name:image\")",
+    "selects": "All elements of type image whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":input\")",
+    "description": "Selects all &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;buttons&gt; elements.",
+    "example": "$(\".class-name:input\")",
+    "selects": "All &lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;buttons&gt; elements whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":password\")",
+    "description": "Selects all elements of type password.",
+    "example": "$(\".class-name:password\")",
+    "selects": "All elements of type password whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":radio\")",
+    "description": "Selects all elements of type radio.",
+    "example": "$(\".class-name:radio\")",
+    "selects": "All elements of type radio whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":reset\")",
+    "description": "Selects all elements of type reset.",
+    "example": "$(\".class-name:reset\")",
+    "selects": "All elements of type reset whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":submit\")",
+    "description": "Selects all elements of type submit.",
+    "example": "$(\".class-name:submit\")",
+    "selects": "All elements of type submit whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":text\")",
+    "description": "Selects all &lt;input&gt; elements of type text.",
+    "example": "$(\".class-name:text\")",
+    "selects": "All &lt;input&gt; elements of type text whose class is \"class-name\""
+  },
+  {
+    "selector": "$(\":selected\")",
+    "description": "Selects all options of select elements that are selected.",
+    "example": "$(\".class-name:selected\")",
+    "selects": "All options of select elements with class \"class-name\" that are currently selected"
+  },
+  {
+    "selector": "$(\":checked)",
+    "description": "Selects all checkboxes, radio buttons and options of select elements that are checked or selected.",
+    "example": "$(\".class-name:checked\")",
+    "selects": "All checkboxes, radio buttons and options of select elements with class \"class-name\" that are currently checked or selected"
+  },
+  {
+    "selector": "$(\":disabled)",
+    "description": "Selects all elements that are disabled.",
+    "example": "$(\".class-name:disabled\")",
+    "selects": "All elements with class \"class-name\" that are disabled"
+  },
+  {
+    "selector": "$(\":enabled)",
+    "description": "Selects all elements that are enabled.",
+    "example": "$(\".class-name:enabled\")",
+    "selects": "All elements with class \"class-name\" that are enabled"
+  },
+  {
+    "selector": "$(\":focus)",
+    "description": "Selects the element that is currently focused.",
+    "example": "$(\".class-name:focus\")",
+    "selects": "The element with class \"class-name\" that is currently focused"
+  }
+]

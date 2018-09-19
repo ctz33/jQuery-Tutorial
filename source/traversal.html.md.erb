@@ -1,0 +1,270 @@
+---
+title: jQuery Traversing
+---
+<!-- Author: Gail Chen
+Created: 7/11
+Edit: 7/13 Gail added more paragraphs.
+Edit: 7/14 Channing, final revision.
+Description: jQuery Traversing Tutorial -->
+
+<h1>jQuery Traversing</h1>
+Traversing means after selecting an element or elements, you can select other elements
+based on their relationships to the selected element(s).
+To select elements based on the hierarchy in the DOM tree, you can use either
+<a href="./selectors.html#hierarchy">hierarchy selectors</a> or traversal methods.
+jQuery provies a variety of traversal methods to access the selected elements'
+ancestors(parent, grandparent, etc), descendants(child, grandchild, etc) and
+siblings(share the same parent). With traversal methods, you can also select
+specific elements from the selected elements, add more elements to your selection,
+and execute a function for every selected element with only one line of code.
+
+Since the traversal methods are used after selecting some elements, the syntax is
+$(selector).method([param]). Not all traversal methods require parameters.
+
+<h2 id="ancestors">Ancestors</h2>
+An ancestor of an element 'elt' is an element that is above the 'elt' element in the DOM tree. Ancestors include parent, grandparent, etc.
+
+In the DOM tree shown below,
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<body\> element is the parent of the \<div\> element.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<div\> element is the parent of \<h2\>, \<p\> and \<ul\> elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<ul\> element is the parent and the ancestor of three \<li\> elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<body\> element is the ancestor of all the other elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<div\> element is the ancestor of \<h2\>, \<p\>, \<ul\>, \<li\> elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found">
+
+For a complete reference of all the jQuery methods of getting ancestors, please visit <a href="./traversal_reference.html#ancestors">jQuery Traversing Reference</a>.
+
+### .parent([selector])
+Gets the parent of the selected element, optionally filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns the parent of <p> elements.
+  $("p").parent()
+```
+
+### .parents([selector])
+Gets all ancestors of the selected element, optionally filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns all ancestors of the <span> elements.
+  $("span").parents()
+```
+
+### .parentsUntil([selector][, filter])
+Gets all ancestors of the selected element up to but not including the element that matches the optional selector, optionally filtered by a filter.
+
+Example:
+
+```javascript
+  //Returns all ancestors between <span> and <div> elements (exclusive).
+  $("span").parentsUntil("div")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="XBbXOG" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Ancestors" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/XBbXOG/">jQuery Traversing Siblings</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="descendants">Descendants</h2>
+A descendant of an element 'elt' is an element that is below the 'elt' element in the DOM tree. Descendants include children, grandchildren, etc.
+
+In the DOM tree shown below,
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The \<div\> element is a child of the \<body\> element.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<h2\>, \<p\> and \<ul\> elements are children of the \<div\> element.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three \<li\> elements are children of the \<ul\> element.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<h2\>, \<p\>, \<ul\>, \<li\> elements are descendants of \<div\> and \<body\> elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<li\> elements are also descendants of \<ul\> elements.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found">
+
+### .children([selector])
+Gets all children of the selected element, optionally filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns all child elements of all <p> elements.
+  $("p").children()
+```
+
+### .find(selector)
+Gets all descendants of the selected element, filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns all <li> elements that are descendants of <div> elements
+  $("div").find("li")
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="yqNYqg" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Descendants" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/yqNYqg/">jQuery Traversing Descendants</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="siblings">Siblings</h2>
+Siblings share the same parent element.
+
+In the DOM tree shown below,
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<h2\>, \<p\> and \<ul\> elements are siblings.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Three \<li\> elements are siblings.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/DOMTree.png" title="DOMTree" alt="Image not found">
+
+For a complete reference of all the jQuery methods of getting siblings, please visit <a href="./traversal_reference.html#siblings">jQuery Traversing Reference</a>.
+
+### .next([selector])
+Gets the immediately following sibling of the selected element, optionally filtered by a selector.
+If the selector is provided, it will get the immediately following sibling only if
+it matches the selector.
+
+Example:
+
+```javascript
+  //Returns the immediately following sibling of the <h2> elements if it is a <p> element.
+  $("h2").next("p")
+```
+
+### .nextAll([selector])
+Gets all following siblings of the selected element, optionally filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns all following siblings of the <h2> elements that are <p> elements.
+  $("h2").nextAll("p")
+```
+
+### .nextUntil([selector][, filter])
+Gets all following siblings of the selected element up to but not including the element that matches the selector, optionally filtered by a filter.
+
+Example:
+
+```javascript
+  //Returns all following siblings between <h2> and <p> elements (exclusive).
+  $("h2").nextUntil("p")
+```
+
+### .siblings([selector])
+Gets all the siblings of the selected element, optionally filtered by a selector.
+
+Example:
+
+```javascript
+  //Returns all the siblings of the <h3> elements.
+  $("h3").siblings()
+```
+
+<p data-height="350" data-theme-id="0" data-slug-hash="gjpwKw" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Siblings" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/gjpwKw/">jQuery Traversing Siblings</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="filtering">Filtering</h2>
+Filtering methods allow you to select specific elements among the selected elements
+based on different conditions including position(index), content, class, attribute, etc.
+
+For a complete reference of all the jQuery filtering methods, please visit <a href="./traversal_reference.html#filtering">jQuery Traversing Reference</a>.
+
+### .eq(index)
+Gets the element with specific index among the selected elements.
+It uses zero-based indexing which means the index starts with 0.
+
+Example:
+
+```javascript
+  //Returns the second <li> element in the document.
+  $("li").eq(1)
+```
+
+### .first()
+Gets the first element of the selected elements.
+
+Example:
+
+```javascript
+  //Returns the first <li> element in the document.
+  $("li").first()
+```
+
+### .filter(selector/function(index))
+Gets the elements that match the selector or pass the function’s test.
+The function uses index as a parameter. For each element of the selected elements,
+if the function returns true, the element will be kept; otherwise, the element
+will be filtered out.
+
+Example:
+
+```javascript
+  //Returns <p> elements that have a class "test-class".
+  $("p").filter(".test-class")
+
+  //Sets the background color of <p> elements with even index to lightblue.
+  $("p").filter(function(index){
+    return index % 2 === 0;
+  }).css('background-color', 'lightblue');
+```
+
+### .not(selector)
+Gets all elements inside of the selected elements that don’t match the selector.
+
+Example:
+
+```javascript
+  //Returns <p> elements that do not have a class "test-class".
+  $("p").not(".test-class")
+```
+
+<p data-height="400" data-theme-id="0" data-slug-hash="NBqgXW" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Filtering" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/NBqgXW/">jQuery Traversing Filtering</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="iteration">Iteration</h2>
+Iteration methods iterate through every selected element.
+They are recommended to use if you want to update or display every selected element.
+
+### .each(function)
+Executes a function for each element in the selected elements.
+
+Example:
+
+```javascript
+  //Executes the function that adds " executes function" to the end of the text
+  //for each <p> element that has a class "class-name".
+  $("p.class-name").each(function(){
+    this.innerHTML += " executes function";
+  });
+```
+
+### .map(callback)
+Passes each element in the selected elements through a callback function,
+creating a new jQuery object containing the return values. The returned jQuery
+object contains an array and you can use the ```get()``` method to work with an array.
+
+Example:
+
+```javascript
+  //Creates a new jQuery object containing each <div> element’s id.
+  $("div").map(function(){
+    return this.id;
+  })
+```
+<p data-height="400" data-theme-id="0" data-slug-hash="oMXGvj" data-default-tab="js,result" data-user="ctz33" data-embed-version="2" data-pen-title="jQuery Traversing Iteration" class="codepen">See the Pen <a href="https://codepen.io/ctz33/pen/oMXGvj/">jQuery Traversing Iteration</a> by ctz33 (<a href="https://codepen.io/ctz33">@ctz33</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<a class="previous" href="./selectors.html"><span>   Previous</span></a>
+<a class="next" href="./manipulation.html"><span>Next  </span></a>

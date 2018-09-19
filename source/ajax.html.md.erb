@@ -1,0 +1,95 @@
+---
+title: jQuery AJAX
+---
+<!-- Created by Channing Jacobs -->
+
+#jQuery AJAX
+
+Web pages traditionally must be reloaded to update their content. This was wasteful as reloading included data such as HTML, CSS, and JavaScript that the user has already downloaded. This problem was solved by using a technology called AJAX. AJAX stands for Asynchronous Javascript and XML. AJAX is a standardized technology that uses an object called XMLHttpRequest (XHR) to pass data between a client and server in the background. The data may be, but is not limited to: text, HTML, XML, or JSON.
+
+Together, XHR and AJAX allows for web page content to be updated, without reloading the web page. AJAX not only saves bandwidth, but also removes the need for user input. Services such as GMail use AJAX to allow for emails to “appear” in a user’s inbox without the need for the user to manually refresh the page.
+
+AJAX is triggered by JavaScript code. This code sends a request to a URL. A response message is later returned to a provided callback function. This request and response are asynchronous. Therefore, the rest of the user’s code can continue execution without waiting for the request to be processed. The callback function guarantees that the inner function will not execute until the parent finishes execution.
+
+One of the largest challenges when using AJAX is implementing it across different browsers. Each browser may implement the AJAX API differently. jQuery handles these differences and provides jQuery AJAX methods that work on all browsers. The standard method is $.ajax(). There are also many helper functions that simplify $.ajax() by filling in most of the content for the user. We will talk about both, but $.ajax() is recommended for greater control.
+
+**Note:** Without special setup, AJAX does not work across domains. If a web page is loaded from mywebsite.com, it can’t make an AJAX request to yourwebsite.com. This is called the “same-origin policy” and is used to prevent an attack called cross-site scripting (XSS).
+
+## Helper Functions
+
+jQuery provides two generic, global helper functions and one generic helper method for getting data from a server. We will start with the methods.
+
+### Getting Data
+
+```javascript
+    $.get(url[,payload][,success][,dataType])
+```
+
+This method sends an HTTP GET request to the server. The user must specify the url as a String (Ex: “data/test_data.html” could be used to load data from the local machine). The other three parameters are optional. The payload is data (a JavaScript object or string) that will be sent to the server. The success is the callback function to execute when a successful response returns (there is no guarantee of it executing). The success callback must be provided if dataType is defined (although null may be used in place of the function). The dataType is a string of the expected type of data (xml, javascript, etc.) from the server (it is guessed by jQuery if not provided).
+
+**Note:** If the dataType does not match the data type sent from the server, then the request is still be successful. This could lead to errors in code that expects certain data types. Thus, it’s best to check not only for success, but for the correct data type. This can be done with the jQuery AJAX call.
+
+### Sending Data
+
+```javascript
+    $.post(url[,payload][,success][,dataType])
+```
+
+The post method sends an HTTP POST request to the server. The user must specify the URL as a String. The other parameters are optional and have the same meaning as with $.get().
+
+### Loading Data
+
+```javascript
+    $(selector).load(URL[, payload][, callback(response_text, status_text, xhr)])
+```
+
+The load method is called on a selected element. It fetches HTML from a URL and populates the selected element with the returned HTML. The user must specify the URL as a String. The optional payload is data that will be sent to the server. The optional callback function is called after the html is inserted. The callback will be passed response_text which contains the HTML string received from the server. The status_text will be a string such as “success” or “error”. The xhr is a [jqXHR object](http://api.jquery.com/jQuery.ajax/#jqXHR). It may be user to analyze the HTTP response thoroughly.
+
+**Note:** The helper functions do not offer callbacks for failure. jQuery does not offer helper methods for PUT or DELETE because these operations are not supported by all browsers.
+
+**Note:** The URL may contain a selector to specify a subset of HTML from the HTML file loaded. (Ex: “data.txt #navbar”).
+
+## Core Function
+
+Finally, we will look at the global jQuery AJAX call. This is the core function used by the helper functions.
+
+```javascript
+    $.ajax(call_object)
+```
+
+The call_object is a JavaScript object containing key:value pairs and callback functions.
+
+Let’s discuss a few of the common call_object properties.
+
+- The async key accepts a boolean value. A true value means the request is asynchronous; while false means synchronous. Synchronous AJAX calls will pause the flow of execution until a response returns. The default is value true.
+- The cache key accepts a boolean value. A true value means that all dataTypes (except script and jsonp) will be cached for use by new AJAX calls. The default is true.
+- The data key accepts a string or object value. The value will be converted into a query string in the url.
+- The dataType key accepts a string value. The value should be a MIME type that the client expects from the server.
+- The timeout key accepts a number value. The value is the time. before the request fails, in milliseconds.
+- The type key accepts a string value. The value is the type of HTTP request (“GET”. “POST, “PUT”, or “DELETE”).
+- The url key accepts a string value. The value should be a valid url to a server or local resource.
+
+There are three methods that can be used to control the flow of execution after receiving a response. These methods should be called on the return value from the $.ajax() call.
+
+```javascript
+    .done(function(data){ })
+    .fail(function(xhr, status, error){ })
+    .always(function(xhr, status){ })
+```
+
+The .done() method runs when an AJAX request succeeded. It can take a callback function; which will be passed the payload from the response.
+
+The .fail() method runs when an AJAX request failed. It can take a callback function. The callback function will be passed the jQXHR object, the status string containing the status of the request, and the error that was thrown.
+
+The .always() method will run after every AJAX call. It can take a callback function. This function is passed the jQXHR object and the status string of the request.
+
+A general layout for an AJAX call is shown in the example below. In the example, html is loaded from another document on the CodePen website. The complete list for uses of the AJAX function is [here](http://api.jquery.com/jQuery.ajax/).
+
+**Example:**
+<p data-height="512" data-theme-id="0" data-slug-hash="NBxxxP" data-default-tab="html,result" data-user="channingjacobs" data-embed-version="2" data-pen-title="AJAX" class="codepen">See the Pen <a href="https://codepen.io/channingjacobs/pen/NBxxxP/">AJAX</a> by ChanningJacobs (<a href="https://codepen.io/channingjacobs">@channingjacobs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+**Note:** AJAX can be used to [interact with forms](https://learn.jquery.com/ajax/ajax-and-forms/).
+
+<a class="previous" href="./Event-and-Animation.html"><span>   Previous</span></a>
+<a class="next" href="./plugin.html"><span>Next  </span></a>

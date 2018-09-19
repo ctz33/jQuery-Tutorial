@@ -1,0 +1,14 @@
+[
+  {
+    "method": ".children([selector])",
+    "description": "Gets all children of the selected element, optionally filtered by a selector.",
+    "example": "$(\"div\").children()",
+    "returns": "All child elements of all &lt;div&gt; elements"
+  },
+  {
+    "method": ".find(selector)",
+    "description": "Gets all descendants of the selected element that match the selector.",
+    "example": "$(\"div\").find(\"li\")",
+    "returns": "All &lt;li&gt; elements that are descendants of &lt;div&gt; elements"
+  }
+]

@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>jQuery Plugins</title>
+    <!-- Global css and linking -->
+    <base target="_top">
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/highlighting.css" />
+    <link rel="stylesheet" href="stylesheets/fontawesome-5.1.0/css/all.css" />
+    <!-- <link href="/stylesheets/highlighting.css" rel="stylesheet" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+} -->
+  </head>
+  <body id="main">
+    <div class="navigation">
+  <a href="https://jquery.com/"><div id="logo"><img id="jQuery-logo" src="images/jquery-logo-vector-download.jpg" alt="jQuery-logo"></div></a>
+<div class="index">
+  <div><a href="./index.html"><p class="section ">Overview</p></a>
+      <!-- <a href="./index.html#intro"><p>What is jQuery</p></a>
+      <a href="./index.html#reason"><p>Why use jQuery</p></a> -->
+  </div>
+  <div><a href="./selectors.html"><p class="section ">jQuery Selectors</p></a>
+      <a href="./selectors.html#basic"><p>Basic Selectors</p></a>
+      <a href="./selectors.html#attribute"><p>Attribute Selectors</p></a>
+      <a href="./selectors.html#child"><p>Child Selectors</p></a>
+      <a href="./selectors.html#content"><p>Content Selectors</p></a>
+      <a href="./selectors.html#form"><p>Form Selectors</p></a>
+      <a href="./selectors.html#hierarchy"><p>Hierarchy</p></a>
+      <a href="./selectors.html#visibility"><p>Visibility Selectors</p></a>
+      <a href="./selector_reference.html"><p>Selectors Reference</p></a>
+  </div>
+
+  <div><a href="./traversal.html"><p class="section ">jQuery Traversing</p></a>
+      <a href="./traversal.html#ancestors"><p>Ancestors</p></a>
+      <a href="./traversal.html#descendants"><p>Descendants</p></a>
+      <a href="./traversal.html#siblings"><p>Siblings</p></a>
+      <a href="./traversal.html#filtering"><p>Filtering</p></a>
+      <a href="./traversal.html#iteration"><p>Iteration</p></a>
+      <a href="./traversal_reference.html"><p>Traversing Reference</p></a>
+  </div>
+  <div><a href="./manipulation.html"><p class="section ">HTML/CSS Manipulation</p></a>
+      <a href="./manipulation.html#HTML_M"><p>HTML</p></a>
+      <a href="./manipulation.html#CSS_M"><p>CSS</p></a>
+  </div>
+  <div><a href="./Event-and-Animation.html"><p class="section ">Event and Animation</p></a>
+      <a href="./Event-and-Animation.html#event"><p>Event</p></a>
+      <a href="./Event-and-Animation.html#animation"><p>Animation</p></a>
+      <a href="./Event-and-Animation.html#effect"><p>Effect</p></a>
+</div>
+  <div><a href="./ajax.html"><p class="section ">AJAX</p></a>
+</div>
+  <div><a href="./plugin.html"><p class="section active">Plugins</p></a>
+  </div>
+</div>
+</div>
+
+    <div class="content-container">
+    <!-- Created by Ariel, minor edits by Channing -->
+
+<h1>Plugins</h1>
+
+<p>jQuery also provides capabilities for developers to create plug-ins on top of the JavaScript library. This adds on the flexibility and functionality of jQuery library. You can find a list of popular plugins from <a href="https://plugins.jquery.com/">https://plugins.jquery.com/</a>.</p>
+
+<h2>Use jQuery Plugins in your projects</h2>
+
+<p>Let&#39;s use the <a href="https://datatables.net/">DataTables</a> plugin as an example. DataTables will help you build a polished table with minimal effort.</p>
+
+<p>The table functions DataTables supports include: sorting, filtering, translation, styling, ajax loading and more.</p>
+
+<h4>Step 1: Include jQuery and DataTables libraries.</h4>
+
+<p>Add jQuery before jQuery plugin libraries to make sure jQuery will load first. Most of jQuery plugin libraies require jQuery to execute. DataTables has both table functionality and style features, so both css and javascript files are needed.</p>
+<div class="highlight"><pre class="syntax-highlight html"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Plugin Example<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div>
+<h4>Step 2: Have a table ready. Give it a good structure with &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tr&gt; and &lt;td&gt; elements</h4>
+
+<p>&lt;thead&gt; and &lt;tbody&gt; are children of &lt;table&gt; and sibings in the DOM Tree. &lt;thead&gt; indicates table header and &lt;tbody&gt; indicates table body. In the example table, &lt;thead&gt; is a row of column names and &lt;tbody&gt; is rows of data.</p>
+
+<p><p data-height="265" data-theme-id="0" data-slug-hash="BPNZKb" data-default-tab="html,result" data-user="Arietta" data-embed-version="2" data-pen-title="Original Table" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/BPNZKb/">Original Table</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Step 3: Select the table by id and add the DataTable style by adding <code>$(&#39;#tableid&#39;).DataTable()</code> to javascript file</h4>
+
+<p>Make sure to add the DataTable plugin after table is loaded because DataTables need data to generate table and trigger features. If your table is not empty but indicates &quot;Showing 0 to 0 of 0 entries&quot;, you may want to use <code>$(document).ready</code> or <code>setTimeout</code> or callback functions to load table first.</p>
+
+<p><p data-height="265" data-theme-id="0" data-slug-hash="XBbgzR" data-default-tab="js,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/XBbgzR/">dataTable</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+ <script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Step 4: Add a quick style to table by adding &quot;display&quot; class to table</h4>
+
+<p>You can add styles by adding class names to the table. Class names including &quot;cell-border&quot;, &quot;compact&quot;, &quot;hover&quot;, &quot;order-column&quot;, &quot;row-border&quot; and &quot;stripe&quot; enable style features. The &quot;display&quot; class is a short-cut for specifying the &quot;stripe&quot;, &quot;hover&quot;, &quot;order-column&quot; and &quot;row-border&quot; as the class name for a table.
+ <p data-height="265" data-theme-id="0" data-slug-hash="bjdRvG" data-default-tab="html,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable with style" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/bjdRvG/">dataTable with style</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+ <script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<h4>Step 5: Sort the table by specify the column and order</h4>
+
+<p><code>$(&#39;#tableid&#39;).DataTable()</code>  will take in a javascript object with a collection of name-value pairs. We set a 2-D array as the value of &#39;order&#39; and each inner array is comprised of two elements: column and order. Column starts from 0 and order can be &#39;asc&#39; for ascending or &#39;desc&#39; for descending. In this example, we set the &#39;Campus&#39; and &#39;Area&#39; column to ascending order.
+<p data-height="265" data-theme-id="0" data-slug-hash="GBoRwY" data-default-tab="js,result" data-user="Arietta" data-embed-version="2" data-pen-title="dataTable with order" class="codepen">See the Pen <a href="https://codepen.io/Arietta/pen/GBoRwY/">dataTable with order</a> by Ariel Zhu (<a href="https://codepen.io/Arietta">@Arietta</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+
+<p><a class="previous" href="./ajax.html"><span>   Previous</span></a></p>
+
+    </div>
+    <!-- Author: Mike -->
+<!-- Created: 6/20 -->
+<!-- Edit: 6/24 Gail used asset helper to send emails. -->
+<!-- Description: The footer shows the webpage is designed by the team MAGiC and allows the users to reach the team via email.-->
+
+<footer>
+	<p>Brought to you by MAG&iexcl;C <a href="mailto:osu.magic.team@gmail.com">Email Us</a></p>
+</footer>
+
+  </body>
+</html>
